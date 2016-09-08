@@ -1,0 +1,5 @@
+<form>
+Name:<input type="text" value="name">
+Completed:<input type="checkbox" value="completed">
+<button class="save">Save</button>
+</form>

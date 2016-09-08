@@ -1,20 +1,29 @@
 class Todo.Routers.Tasks extends Backbone.Router
   routes:
     '' : 'index'
-    'tasks/' : 'index'
-    'tasks' : 'index'
+    #'tasks/' : 'index'
+    #'tasks' : 'index'
+    'new' : 'new'
     
-  # initialize: ->
-    # alert "hop" 
+  initialize: ->
+    @todoTasks = new Todo.Collections.Tasks()
+    @todosView = new Todo.Views.TasksIndex(collection: @todoTasks)
 
   index: ->
-    t1 = new Todo.Models.Task(name: 'test1', completed: false)
-    t2 = new Todo.Models.Task(name: 'test2', completed: true)
-    t3 = new Todo.Models.Task(name: 'test3', completed: false)
+    console.log 'Index'
 
-    tc = new Todo.Collections.Tasks([t1, t2, t3])
-    tv = new Todo.Views.TasksIndex(collection: tc)
-    tv.render()
+    @todoTasks.fetch
+      success: => 
+        console.log 'success'
+        $('#app').html(@todosView.render().el)
+      error: -> 
+        console.log 'error'
+        $('#app').html('Ups')
 
-    $('#task_list').html(tv.el)
-    # alert "aa"
+  new: ->
+    console.log 'New'
+    newtask = new Todo.Views.TaskNew()
+
+    newtask.render()
+    $('#app').html(newtask.el)
+
