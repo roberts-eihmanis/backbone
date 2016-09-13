@@ -1,5 +1,5 @@
 <form>
-Name:<input type="text" value="name">
-Completed:<input type="checkbox" value="completed">
+Name:<input type="text" name=name value="<%= @name %>"> </input>
+Completed:<input type="checkbox" name=completed <%= "checked" if @completed %>>
 <button class="save">Save</button>
 </form>

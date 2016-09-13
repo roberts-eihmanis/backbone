@@ -1,10 +1,10 @@
 class Todo.Models.Task extends Backbone.Model
   urlRoot : '/tasks'
 
-  defaults = [
+  defaults:
     name: 'What you want to do?'
-    completed: 'false'
-  ]
+    completed: false
+  
 
   initialize: ->
     console.log 'Model' 

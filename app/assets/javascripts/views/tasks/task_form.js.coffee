@@ -4,15 +4,29 @@ class Todo.Views.TaskForm extends Backbone.View
   events: {
     'click .save' : 'save'
   }  
+  
+  templateAttributes: ->
+    name: @model.get("name")
+    completed: @model.get("completed")
+    id: @model.get('id')
 
   render: ->
-    html = @template
+    html = @template(@templateAttributes())
     @$el.html html
     @
 
   save: (e)->
     console.log 'Save now'
+
     e.preventDefault()
-    newTask = @.$('input[name=name]').val()
-    @.model.save({name: newTask})
+    newName = @$el.find('input[name=name]').val()
+    newStatus = @$el.find('input[name=completed]').prop('checked')
+    @model.save(name: newName, completed: newStatus, 
+      success: ->
+        Backbone.history.navigate('', trigger: true)
+        window.location.reload()
+      error: (model, error) ->
+        console.log "#{model} Error: #{error}" 
+    )
+    @
 

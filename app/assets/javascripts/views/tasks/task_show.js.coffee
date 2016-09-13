@@ -4,6 +4,7 @@ class Todo.Views.TaskShow extends Backbone.View
   templateAttributes: ->
     name: @model.get('name')
     completed: @model.get('completed')
+    id: @model.get('id')
 
   render: ->
     html = @template @templateAttributes()

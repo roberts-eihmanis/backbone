@@ -14,6 +14,10 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @task }
+    end
   end
 
   # GET /tasks/new
@@ -33,7 +37,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
+        format.json { redirect_to @task }
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -47,7 +51,8 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
+        format.json { redirect_to @task, status: 303 }
+#        format.json { render json: 'updated', status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @task.errors, status: :unprocessable_entity }

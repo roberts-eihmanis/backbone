@@ -1,1 +1,1 @@
-<li><%= @name %>: (<%= @completed %>)</li>
+<li><b><%= @id %>. </b><%= @name %>: (<%= @completed %>)<a href="#edit/<%= @id %>">edit</a></li>

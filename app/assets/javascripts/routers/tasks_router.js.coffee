@@ -4,6 +4,8 @@ class Todo.Routers.Tasks extends Backbone.Router
     #'tasks/' : 'index'
     #'tasks' : 'index'
     'new' : 'new'
+    'edit/:id' : 'edit'
+    'show' : 'show'
     
   initialize: ->
     @todoTasks = new Todo.Collections.Tasks()
@@ -22,8 +24,24 @@ class Todo.Routers.Tasks extends Backbone.Router
 
   new: ->
     console.log 'New'
-    newtask = new Todo.Views.TaskNew()
 
-    newtask.render()
-    $('#app').html(newtask.el)
+    newForm = new Todo.Views.TaskForm(model: new Todo.Models.Task())
+    newForm.render()
+    
+    $('#app').html(newForm.el)
+
+  edit: (id) ->
+    console.log 'Edit'
+    @todoTask = new Todo.Models.Task(id: id)
+    @todoTask.fetch
+      success: =>
+        editForm = new Todo.Views.TaskForm(model: @todoTask)
+        editForm.render()
+        $('#app').html(editForm.el)      
+       error: -> 
+        console.log 'error'
+        $('#app').html('Ups')
+    
+
+
 
