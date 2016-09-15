@@ -1,8 +1,8 @@
 class Todo.Views.TasksIndex extends Backbone.View
 
-  events: {
-    'enter ' : 'save'
-  }
+  initialize: ->
+    console.log "initialize"
+    # @listenTo(@collection, 'sync', @render)
 
   render: ->
     console.log 'rendering_tasksindex'

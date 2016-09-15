@@ -23,8 +23,8 @@ class Todo.Views.TaskForm extends Backbone.View
     newStatus = @$el.find('input[name=completed]').prop('checked')
     @model.save(name: newName, completed: newStatus, 
       success: ->
+        @$el.empty()
         Backbone.history.navigate('', trigger: true)
-        window.location.reload()
       error: (model, error) ->
         console.log "#{model} Error: #{error}" 
     )

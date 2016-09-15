@@ -1,1 +1,10 @@
-<li><b><%= @id %>. </b><%= @name %>: (<%= @completed %>)<a href="#edit/<%= @id %>">edit</a></li>
+<label>
+<li>
+<b>
+<input type="checkbox" name=completed <%= "checked" if @completed %> >
+<%= @id %>. 
+</b>
+<span class="<%= "completed" if @completed %>"><%= @name %>: (<%= @completed %>) </span>
+<a href="#edit/<%= @id %>">edit</a>
+</li>
+<label>
