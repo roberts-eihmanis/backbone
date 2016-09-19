@@ -24,7 +24,6 @@ class Todo.Routers.Tasks extends Backbone.Router
 
   new: ->
     console.log 'New'
-
     newForm = new Todo.Views.TaskForm(model: new Todo.Models.Task())
     newForm.render()
     

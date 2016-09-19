@@ -22,7 +22,7 @@ class Todo.Views.TaskForm extends Backbone.View
     newName = @$el.find('input[name=name]').val()
     newStatus = @$el.find('input[name=completed]').prop('checked')
     @model.save(name: newName, completed: newStatus, 
-      success: ->
+      success: =>
         @$el.empty()
         Backbone.history.navigate('', trigger: true)
       error: (model, error) ->
