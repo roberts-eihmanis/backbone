@@ -2,7 +2,7 @@ class Todo.Routers.Tasks extends Backbone.Router
   routes:
     '' : 'index'
     #'tasks/' : 'index'
-    #'tasks' : 'index'
+    'tasks' : 'index'
     'new' : 'new'
     'edit/:id' : 'edit'
     'show' : 'show'

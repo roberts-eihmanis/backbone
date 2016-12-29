@@ -23,6 +23,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'backbone-on-rails'
 gem 'jquery-rails'
 gem 'underscore-rails'
+gem 'haml'
+
+group :assets do
+  gem 'haml_coffee_assets'
+  gem 'execjs'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

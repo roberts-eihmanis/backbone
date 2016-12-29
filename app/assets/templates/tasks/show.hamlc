@@ -1,0 +1,11 @@
+%table
+  %td
+    = @id
+  %td
+    %input{ type: "checkbox", name: "completed", checked: @completed, value: "#{@completed}"}
+  %td{:class => "#{"completed" if @completed}"}= @name
+  %td{:class => "#{"completed" if @completed}"}= @completed
+  %td
+    %a{:href => "#edit/#{@id}"} edit
+  %td
+    %button.delete= "Delete"

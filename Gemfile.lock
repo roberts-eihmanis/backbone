@@ -63,6 +63,11 @@ GEM
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    haml (4.0.5)
+      tilt
+    haml_coffee_assets (1.17.0)
+      coffee-script (>= 2)
+      sprockets (>= 2)
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -163,6 +168,9 @@ PLATFORMS
 DEPENDENCIES
   backbone-on-rails
   byebug
+  execjs
+  haml
+  haml_coffee_assets
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -178,4 +186,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.12.5
+   1.13.5

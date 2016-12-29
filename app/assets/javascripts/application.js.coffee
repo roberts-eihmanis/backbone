@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require underscore
 #= require backbone
+#= require hamlcoffee
 #= require_self
 #= require todo
 #= require_tree ../templates

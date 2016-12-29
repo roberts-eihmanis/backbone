@@ -1,0 +1,6 @@
+%form
+  %b= "Name"
+    %input{ type: "text", name: "name", value: @name }
+  %b= "Completed"
+    %input{ type: "checkbox", name: "completed", checked: @completed, value: "#{@completed}"}
+  %button.save= "Save"

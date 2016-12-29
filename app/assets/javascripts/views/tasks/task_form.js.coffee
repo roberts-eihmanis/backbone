@@ -3,7 +3,7 @@ class Todo.Views.TaskForm extends Backbone.View
   
   events: {
     'click .save' : 'save'
-  }  
+  }
   
   templateAttributes: ->
     name: @model.get("name")
@@ -21,12 +21,12 @@ class Todo.Views.TaskForm extends Backbone.View
     e.preventDefault()
     newName = @$el.find('input[name=name]').val()
     newStatus = @$el.find('input[name=completed]').prop('checked')
-    @model.save(name: newName, completed: newStatus, 
+    @model.save(name: newName, completed: newStatus,
       success: =>
         @$el.empty()
         Backbone.history.navigate('', trigger: true)
       error: (model, error) ->
-        console.log "#{model} Error: #{error}" 
+        console.log "#{model} Error: #{error}"
     )
     @
 

@@ -1,8 +1,5 @@
 class Todo.Views.TasksIndex extends Backbone.View
-
-  initialize: ->
-    console.log "initialize"
-    # @listenTo(@collection, 'sync', @render)
+  template: JST['tasks/index']
 
   render: ->
     console.log 'rendering_tasksindex'

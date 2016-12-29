@@ -1,5 +1,6 @@
 class Todo.Views.TaskShow extends Backbone.View
   template: JST['tasks/show']
+
   events: {
     'change input': 'clicked'
     'click .delete': 'delete'
@@ -29,6 +30,5 @@ class Todo.Views.TaskShow extends Backbone.View
     @
 
   render: ->
-    html = @template @templateAttributes()
-    @$el.html html
+    @$el.html(@template(@templateAttributes()))
     @
