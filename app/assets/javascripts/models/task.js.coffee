@@ -7,7 +7,4 @@ class Todo.Models.Task extends Backbone.Model
   
 
   initialize: ->
-    console.log 'Model' 
-
-
-  
+    console.log 'Model'

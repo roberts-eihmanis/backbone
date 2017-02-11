@@ -1,6 +1,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require underscore
+#= require bootstrap.min
 #= require backbone
 #= require hamlcoffee
 #= require_self

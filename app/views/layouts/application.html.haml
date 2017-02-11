@@ -5,4 +5,26 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    = yield
+    - if user_signed_in?
+      #wrapper
+        #sidebar-wrapper
+          %ul.sidebar-nav
+            %li.sidebar-brand
+              %a{:href => root_path} Home
+            %li
+              %a{:href => tasks_path} Products
+            %li
+              %a{:href => root_path} Admin
+            %li
+              %a{:href => edit_user_registration_path, :class => 'navbar-link'} Edit profile
+            %li
+              = link_to "Sign out", destroy_user_session_path, :method => :delete
+        #page-content-wrapper
+          .container-fluid
+            .row
+              .col-lg-12
+                = yield
+                %p.notice= notice
+                %p.alert= alert
+    - else
+      = yield

@@ -8,7 +8,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @tasks }
-    end    
+    end
   end
 
   # GET /tasks/1
