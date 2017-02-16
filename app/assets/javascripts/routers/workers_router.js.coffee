@@ -6,7 +6,7 @@ class Inventory.Routers.Workers extends Backbone.Router
     'workers/show' : 'show'
     
   initialize: ->
-    @inventoryWorkers = new Inventory.Collections.Workers()
+    @inventoryWorkers = new Inventory.Collections.Workers
     @workersView = new Inventory.Views.WorkersIndex(collection: @inventoryWorkers)
     @$body = $(document).find('#page-content-wrapper')
     @$body.empty()
@@ -30,10 +30,10 @@ class Inventory.Routers.Workers extends Backbone.Router
 
   edit: (id) ->
     console.log 'Edit'
-    @todoTask = new Inventory.Models.Worker(id: id)
-    @todoTask.fetch
+    @inventoryWorkers = new Inventory.Models.Worker(id: id)
+    @inventoryWorkers.fetch
       success: =>
-        editForm = new Inventory.Views.TaskForm(model: @todoTask)
+        editForm = new Inventory.Views.TaskForm(model: @inventoryWorkers)
         editForm.render()
         @$body.html(editForm.el)
       error: ->

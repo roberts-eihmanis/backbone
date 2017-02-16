@@ -2,4 +2,4 @@
 %a.btn.btn-primary{ href: '#workers/form'}= "Izveidot Pasūtijumu"
 %a.btn.btn-primary= "Bijušie Darbinieki"
 %h1= "Esošie Darbinieki"
-%ul.workers_container.list-group
+%ul.workers_container.list-group{ style: "width: 60%;"}

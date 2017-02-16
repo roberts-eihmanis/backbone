@@ -1,42 +1,45 @@
-%h1= "Jauns Darbinieks"
-%div.form-group.first_name
-  %input{ type: "text", value: @first_name, name: "first_name", placeholder: "Vārds", class: "form-control", style: "width: 60%;" }
-%div.form-group.last_name
-  %input{ type: "text", value: @last_name, name: "last_name", placeholder: "Uzvārds", class: "form-control", style: "width: 60%;" }
-%div.form-group
-  %select.form-control.gender{ style: "width:60%;" }
-    %option{ hidden }= "Dzimums"
-    %option{ value: "Vīrietis" }= "Vīrietis"
-    %option{ value: "Sieviete" }= "Sieviete"
-%div.form-group
-  %select.form-control.position{ style: "width:60%;", name: "positiion" }
-    %option{ hidden }= "Amats"
-    - for position in Inventory.config.positions
-      %option{ value: "#{position}" }= "#{position}"
-%div.form-group
-  %select.form-control.breast{ style: "width:60%;", name: "breast" }
-    %option{ hidden }= "Krūšu apkārtmērs"
-    - for i in [70..150]
-      %option{ value: "#{i}" }= "#{i}"
-%div.form-group
-  %select.form-control.waist{ style: "width:60%;" name: "waist" }
-    %option{ hidden }= "Vidukļa apkārtmērs"
-    - for i in [60..150]
-      %option{ value: "#{i}" }= "#{i}"
-%div.form-group
-  %select.form-control.hip{ style: "width:60%; max-height: 100px; overflow-y: auto; overflow-x: hidden;" }
-    %option{ hidden }= "Gurnu apkārtmērs"
-    - for i in [60..150]
-      %option{ value: "#{i}" }= "#{i}"
-%div.form-group
-  %select.form-control.height{ style: "width:60%;" }
-    %option{ hidden }= "Augums"
-    - for i in [145..210]
-      %option{ value: "#{i}" }= "#{i}"
-%div.form-group
-  %select.form-control.foot{ style: "width:60%;" }
-    %option{ hidden }= "Apavu izmērs"
-    - for i in [34..49]
-      %option{ value: "#{i}" }= "#{i}"
-%button.btn.btn-primary.save= "Saglabāt"
-%button.btn.btn-primary.cancel= "Atcelt"
+%h2= "Jauns Darbinieks"
+%form.form-horizontal
+  %div.form-group.first_name
+    %label.control-label.col-xs-2= "Vārds"
+    %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "Vārds", class: "form-control", style: "width: 60%;" }
+  %div.form-group.last_name
+    %label.control-label.col-xs-2= "Uzvārds"
+    %input{ type: "text", value: @last_name, name: "last_name", placeholder: "Uzvārds", class: "form-control", style: "width: 60%;" }
+  %div.form-group
+    %label.control-label.col-xs-2= "Dzimums"
+    %select.form-control.gender{ style: "width:60%;" }
+      %option{ value: "Virietis" }= "Vīrietis"
+      %option{ value: "Sieviete" }= "Sieviete"
+  %div.form-group
+    %label.control-label.col-xs-2= "Amats"
+    %select.form-control.position{ style: "width:60%;", name: "positiion" }
+      - for position in Inventory.config.positions
+        %option{ value: @position }= "#{position}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Krūšu apkārtmērs"
+    %select.form-control.breast{ style: "width:60%;", name: "breast" }
+      - for i in [70..250]
+        %option{ value: @breast_size }= "#{i}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Vidukļa apkārtmērs"
+    %select.form-control.waist{ style: "width:60%;" name: "waist" }
+      - for i in [60..250]
+        %option{ value: @waist_size }= "#{i}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Gurnu apkārtmērs"
+    %select.form-control.hip{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
+      - for i in [60..250]
+        %option{ value: @hip_size }= "#{i}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Garums"
+    %select.form-control.height{ style: "width:60%;" }
+      - for i in [245..220]
+        %option{ value: @height }= "#{i}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Kājas izmērs"
+    %select.form-control.foot{ style: "width:60%;" }
+      - for i in [34..49]
+        %option{ value: @foot_size }= "#{i}"
+  %button.btn.btn-primary.save= "Saglabāt"
+  %button.btn.btn-primary.cancel= "Atcelt"

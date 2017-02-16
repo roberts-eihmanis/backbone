@@ -1,1 +1,2 @@
-%li.list-group-item= @first_name + @last_name
+%a.list-group-item.list-group-item-action{href: "#", style: "margin-bottom: 5px; font-size: 20px;"}
+  = [@first_name, @last_name].join(' ')

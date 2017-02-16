@@ -26,7 +26,8 @@ class Inventory.Views.WorkerForm extends Backbone.View
     newHeight = @$el.find('select.height').val()
     newFoot = @$el.find('select.foot').val()
 
-    @model.save(first_name: firstName,
+    @model.save(first_name: firstName, last_name: lastName, gender: newGender, position: newPosition, breast_size: newBreast,
+      waist_size: newWaist, hip_size: newHip, height: newHeight, foot_size: newFoot,
       success: =>
         @$el.empty()
         Backbone.history.navigate('#workers', trigger: true)
