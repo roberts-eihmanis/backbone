@@ -1,46 +1,42 @@
-class Todo.Routers.Tasks extends Backbone.Router
+class Inventory.Routers.Tasks extends Backbone.Router
   routes:
-    '' : 'index'
-    #'tasks/' : 'index'
     'tasks' : 'index'
-    'new' : 'new'
-    'edit/:id' : 'edit'
-    'show' : 'show'
+    'tasks/new' : 'new'
+    'tasks/edit/:id' : 'edit'
+    'tasks/show' : 'show'
     
   initialize: ->
-    @todoTasks = new Todo.Collections.Tasks()
-    @todosView = new Todo.Views.TasksIndex(collection: @todoTasks)
+    @tasks = new Inventory.Collections.Tasks
+    @tasksView = new Inventory.Views.TasksIndex(collection: @tasks)
+    @$body = $(document).find('#page-content-wrapper')
 
   index: ->
-    console.log 'Index'
+    console.log 'Index Tasks'
+    @$body.empty()
 
-    @todoTasks.fetch
-      success: => 
+    @tasks.fetch
+      success: =>
         console.log 'success'
-        $('#app').html(@todosView.render().el)
+        @$body.html(@tasksView.render().el)
       error: -> 
         console.log 'error'
-        $('#app').html('Ups')
+        @$body.html('Ups')
 
   new: ->
     console.log 'New'
-    newForm = new Todo.Views.TaskForm(model: new Todo.Models.Task())
+    newForm = new Inventory.Views.TaskForm(model: new Inventory.Models.Task())
     newForm.render()
     
-    $('#app').html(newForm.el)
+    @$body.html(newForm.el)
 
   edit: (id) ->
     console.log 'Edit'
-    @todoTask = new Todo.Models.Task(id: id)
-    @todoTask.fetch
+    @task = new Inventory.Models.Task(id: id)
+    @task.fetch
       success: =>
-        editForm = new Todo.Views.TaskForm(model: @todoTask)
+        editForm = new Inventory.Views.TaskForm(model: @tasks)
         editForm.render()
-        $('#app').html(editForm.el)      
-       error: -> 
+        @$body.html(editForm.el)
+      error: ->
         console.log 'error'
-        $('#app').html('Ups')
-    
-
-
-
+        $('.tasks').html('Ups')

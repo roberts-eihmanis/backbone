@@ -1,10 +1,3 @@
-class Todo.Collections.Tasks extends Backbone.Collection
+class Inventory.Collections.Tasks extends Backbone.Collection
   url: '/tasks.json'
-  model: Todo.Models.Task
-
-
-  console.log 'Collection_Tasks'
-  #tasks_collection = new Task(tasks)
-
-
-
+  model: Inventory.Models.Task

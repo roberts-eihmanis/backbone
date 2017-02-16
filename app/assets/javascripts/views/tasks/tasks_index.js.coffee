@@ -1,13 +1,16 @@
-class Todo.Views.TasksIndex extends Backbone.View
+class Inventory.Views.TasksIndex extends Backbone.View
   template: JST['tasks/index']
 
+  templateAttributes: ->
+    entries: @collection.toJSON()
+
   render: ->
-    console.log 'rendering_tasksindex'
-    @$el.empty()
-    @collection.each (task) =>
-      taskView = new Todo.Views.TaskShow(model: task)
-      @$el.append taskView.render().el
+    @$el.html(@template(@templateAttributes()))
+    @renderTasks()
     @
 
-
-
+  renderTasks: ->
+    @collection.each (task) =>
+      taskView = new Inventory.Views.TaskShow(model: task)
+      @$('.entries').append taskView.render().el
+    @

@@ -1,4 +1,4 @@
-class Todo.Models.Task extends Backbone.Model
+class Inventory.Models.Task extends Backbone.Model
   urlRoot : '/tasks'
 
   defaults:

@@ -1,19 +1,15 @@
-class Todo.Views.TaskShow extends Backbone.View
+class Inventory.Views.TaskShow extends Backbone.View
   template: JST['tasks/show']
 
-  events: {
+  events: 
     'change input': 'clicked'
     'click .delete': 'delete'
-  }
 
   initialize: ->
     @model.on('change', @render, @)
-    #@model.on('destroy', @remove, @)
 
   templateAttributes: ->
-    name: @model.get('name')
-    completed: @model.get('completed')
-    id: @model.get('id')
+    @model.toJSON()
 
   clicked: (e) ->
     newStatus = @$el.find('input[name=completed]').prop('checked')

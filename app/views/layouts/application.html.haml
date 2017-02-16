@@ -1,6 +1,6 @@
 %html
   %head
-    %title Todo
+    %title Inventory
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
@@ -12,7 +12,9 @@
             %li.sidebar-brand
               %a{:href => root_path} Home
             %li
-              %a{:href => tasks_path} Products
+              %a{:href => "/#tasks"} Products
+            %li
+              %a{:href => "/#workers"} Workers
             %li
               %a{:href => root_path} Admin
             %li
@@ -23,7 +25,6 @@
           .container-fluid
             .row
               .col-lg-12
-                = yield
                 %p.notice= notice
                 %p.alert= alert
     - else

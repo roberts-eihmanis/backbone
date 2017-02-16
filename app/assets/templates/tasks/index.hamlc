@@ -1,1 +1,3 @@
-%li= @name
+%h1= "Tasks"
+.entries
+%a{href: "#tasks/new"} New

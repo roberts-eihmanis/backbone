@@ -5,7 +5,7 @@
 #= require backbone
 #= require hamlcoffee
 #= require_self
-#= require todo
+#= require inventory
 #= require_tree ../templates
 #= require_tree ./models
 #= require_tree ./collections
