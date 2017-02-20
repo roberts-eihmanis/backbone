@@ -1,2 +1,14 @@
-%a.list-group-item.list-group-item-action{href: "#", style: "margin-bottom: 5px; font-size: 20px;"}
-  = [@first_name, @last_name].join(' ')
+%td= @id
+%td
+  %a{ href: '#workers/show/#{@id}'}
+    = @first_name
+%td= @last_name
+%td= @gender
+%td= @position
+%td= @breast_size
+%td= @waist_size
+%td= @hip_size
+%td= @height
+%td= @foot_size
+%td
+  %button.btn.btn-primary.delete_worker= "Delete"

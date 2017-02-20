@@ -1,7 +1,6 @@
 #= require jquery
 #= require jquery_ujs
 #= require underscore
-#= require bootstrap.min
 #= require backbone
 #= require hamlcoffee
 #= require_self
@@ -11,5 +10,3 @@
 #= require_tree ./collections
 #= require_tree ./views
 #= require_tree ./routers
-
-

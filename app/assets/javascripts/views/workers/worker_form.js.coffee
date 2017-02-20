@@ -3,7 +3,7 @@ class Inventory.Views.WorkerForm extends Backbone.View
   
   events: {
     'click .save' : 'save'
-    # 'click .cancel': 'cancel'
+    'click .cancel': 'cancel'
   }
   
   templateAttributes: ->
@@ -13,6 +13,10 @@ class Inventory.Views.WorkerForm extends Backbone.View
     html = @template(@templateAttributes())
     @$el.html html
     @
+
+  cancel: (e) ->
+    e?.preventDefault()
+    Backbone.history.navigate('#workers', trigger: true)
 
   save: (e) ->
     e.preventDefault()
@@ -26,8 +30,18 @@ class Inventory.Views.WorkerForm extends Backbone.View
     newHeight = @$el.find('select.height').val()
     newFoot = @$el.find('select.foot').val()
 
-    @model.save(first_name: firstName, last_name: lastName, gender: newGender, position: newPosition, breast_size: newBreast,
-      waist_size: newWaist, hip_size: newHip, height: newHeight, foot_size: newFoot,
+    saveWorker = 
+      first_name: firstName
+      last_name: lastName
+      gender: newGender
+      position: newPosition
+      breast_size: newBreast
+      waist_size: newWaist
+      hip_size: newHip
+      height: newHeight
+      foot_size: newFoot
+
+    @model.save(saveWorker,
       success: =>
         @$el.empty()
         Backbone.history.navigate('#workers', trigger: true)

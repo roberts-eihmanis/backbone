@@ -12,5 +12,5 @@ class Inventory.Views.WorkersIndex extends Backbone.View
   renderWorkers: ->
     @collection.each (worker) =>
       workerView = new Inventory.Views.WorkerShow(model: worker)
-      @$('.workers_container').append workerView.render().el
+      @$('tbody.workers').append workerView.render().el
     @

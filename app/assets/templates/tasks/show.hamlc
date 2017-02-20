@@ -6,6 +6,6 @@
   %td{:class => "#{"completed" if @completed}"}= @name
   %td{:class => "#{"completed" if @completed}"}= @completed
   %td
-    %a{:href => "#edit/#{@id}"} edit
+    %a{:href => "#tasks/edit/#{@id}"} edit
   %td
     %button.delete= "Delete"

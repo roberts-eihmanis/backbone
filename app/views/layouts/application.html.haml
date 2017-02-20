@@ -12,7 +12,7 @@
             %li.sidebar-brand
               %a{:href => root_path} Home
             %li
-              %a{:href => "/#tasks"} Products
+              %a{:href => "/#tasks"} Tasks
             %li
               %a{:href => "/#workers"} Workers
             %li
@@ -27,6 +27,5 @@
               .col-lg-12
                 %p.notice= notice
                 %p.alert= alert
-                = yield
     - else
       = yield

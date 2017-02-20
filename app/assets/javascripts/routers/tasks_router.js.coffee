@@ -34,7 +34,7 @@ class Inventory.Routers.Tasks extends Backbone.Router
     @task = new Inventory.Models.Task(id: id)
     @task.fetch
       success: =>
-        editForm = new Inventory.Views.TaskForm(model: @tasks)
+        editForm = new Inventory.Views.TaskForm(model: @task)
         editForm.render()
         @$body.html(editForm.el)
       error: ->

@@ -3,22 +3,20 @@ class Inventory.Routers.Workers extends Backbone.Router
     'workers' : 'index'
     'workers/new' : 'new'
     'workers/edit/:id' : 'edit'
-    'workers/show' : 'show'
+    'workers/show/:id' : 'show'
     
   initialize: ->
     @inventoryWorkers = new Inventory.Collections.Workers
     @workersView = new Inventory.Views.WorkersIndex(collection: @inventoryWorkers)
     @$body = $(document).find('#page-content-wrapper')
-    @$body.empty()
 
   index: ->
     console.log 'WorkersIndex'
-
     @inventoryWorkers.fetch
       success: =>
         console.log 'success'
         @$body.html(@workersView.render().el)
-      error: ->
+      error: =>
         console.log 'error'
         @$body.html('Ups')
 
@@ -28,12 +26,25 @@ class Inventory.Routers.Workers extends Backbone.Router
     newForm.render()
     @$body.html(newForm.el)
 
+  show: (id) ->
+    console.log "show"
+    @inventoryWorkers = new Inventory.Models.Worker(id: id)
+    @inventoryWorkers.fetch
+      success: =>
+        detailsView = new Inventory.Views.Details(model: @inventoryWorkers)
+        detailsView.render()
+        @$body.html(detailsView.el)
+      error: =>
+        console.log 'error'
+        @$body.html('Ups')
+
+
   edit: (id) ->
     console.log 'Edit'
     @inventoryWorkers = new Inventory.Models.Worker(id: id)
     @inventoryWorkers.fetch
       success: =>
-        editForm = new Inventory.Views.TaskForm(model: @inventoryWorkers)
+        editForm = new Inventory.Views.WorkerForm(model: @inventoryWorkers)
         editForm.render()
         @$body.html(editForm.el)
       error: ->

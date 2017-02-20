@@ -1,0 +1,32 @@
+%h1= "Darbinieka Skats"
+.container
+  %table.table
+    %tbody
+      %tr
+        %td= "Vārds"
+        %td= @first_name
+      %tr
+        %td= "Uzvārds"
+        %td= @last_name
+      %tr
+        %td= "Dzimums"
+        %td= @gender
+      %tr
+        %td= "Amats"
+        %td= @position
+      %tr
+        %td= "Krūšu apkārtmērs"
+        %td= @breast_size
+      %tr
+        %td= "Vidukļa apkārtmērs"
+        %td= @waist_size
+      %tr
+        %td= "Gurnu apkārtmērs"
+        %td= @hip_size
+      %tr
+        %td= "Augums"
+        %td= @height
+      %tr
+        %td= "Kājais izmērs"
+        %td= @foot_size
+%a.btn.btn-info.delete_worker{ href: "#", role: "button" }= "Dzēst"

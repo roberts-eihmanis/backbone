@@ -1,5 +1,17 @@
-%a.btn.btn-primary{ href: '#workers/new'}= "Jauns Darbinieks"
-%a.btn.btn-primary{ href: '#workers/form'}= "Izveidot Pasūtijumu"
-%a.btn.btn-primary= "Bijušie Darbinieki"
+%a.btn.btn-info.btn-lg{ href: '#workers/new', role: "button" }= "Jauns Darbinieks"
+%a.btn.btn-info.btn-lg= "Bijušie Darbinieki"
 %h1= "Esošie Darbinieki"
-%ul.workers_container.list-group{ style: "width: 60%;"}
+%table.table.table-hover.table-striped
+  %thead
+    %tr
+      %th= "#"
+      %th= "Vārds"
+      %th= "Uzvārds"
+      %th= "Dzimums"
+      %th= "Darba Amats"
+      %th= "Krūšu Apkārtmērs"
+      %th= "Vidukļa Apkārtmērs"
+      %th= "Gurnu Apkārtmērs"
+      %th= "Garums"
+      %th= "Kājas izmērs"
+  %tbody.workers
