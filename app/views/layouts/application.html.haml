@@ -25,7 +25,7 @@
           .container-fluid
             .row
               .col-lg-12
-                %p.notice= notice
-                %p.alert= alert
+                %p.notice= notice if notice
+                %p.alert= alert if alert
     - else
       = yield

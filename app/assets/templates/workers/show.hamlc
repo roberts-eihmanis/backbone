@@ -10,5 +10,6 @@
 %td= @hip_size
 %td= @height
 %td= @foot_size
+%td= @active
 %td
   %button.btn.btn-primary.delete_worker= "Delete"

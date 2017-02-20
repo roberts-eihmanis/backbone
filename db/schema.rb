@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211140541) do
+ActiveRecord::Schema.define(version: 20170220133002) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170211140541) do
     t.integer "hip_size"
     t.integer "height"
     t.integer "foot_size"
+    t.boolean "active",      default: true
   end
 
 end

@@ -1,8 +1,15 @@
-%a.btn.btn-info.btn-lg{ href: '#workers/new', role: "button" }= "Jauns Darbinieks"
-%a.btn.btn-info.btn-lg= "Bijušie Darbinieki"
-%h1= "Esošie Darbinieki"
+%a.btn.btn-primary.btn-lg{ href: '#workers/new', role: "button" }= "Jauns Darbinieks"
+%a.btn.btn-primary.btn-lg= "Bijušie Darbinieki"
+%div.row{ style: "margin-top: 10px;"}
+  %div.col-lg-6
+    %h1= "Esošie Darbinieki"
+  %div.col-lg-4.pull-right
+    %div.input-group{ style: 'padding-top:25px;'}
+      %span.input-group-btn
+        %button.btn.btn-secondary{ type: 'button' }= "Search"
+      %input.form-control{ type: 'text', placeholder: 'Search'}
 %table.table.table-hover.table-striped
-  %thead
+  %thead.table_head
     %tr
       %th= "#"
       %th= "Vārds"
@@ -14,4 +21,5 @@
       %th= "Gurnu Apkārtmērs"
       %th= "Garums"
       %th= "Kājas izmērs"
+      %th= "Aktīvs"
   %tbody.workers
