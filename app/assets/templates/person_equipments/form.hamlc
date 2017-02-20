@@ -1,0 +1,45 @@
+%h2= "Jauns IAL"
+%form.form-horizontal
+  %div.form-group.first_name
+    %label.control-label.col-xs-2= "Nosaukums"
+    %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "Uzņēmuma nosaukums", class: "form-control", style: "width: 60%;" }
+  %div.form-group.last_name
+    %label.control-label.col-xs-2= "Ražotājs"
+    %input{ type: "text", value: @last_name, name: "last_name", placeholder: "Ražotājs", class: "form-control", style: "width: 60%;" }
+  %div.form-group
+    %label.control-label.col-xs-2= "Ražotāja valsts"
+    %select.form-control.gender{ style: "width:60%;" }
+      %option{ value: "" }= "Latvija"
+      %option{ value: "" }= "Vācija"
+  %div.form-group
+    %label.control-label.col-xs-2= "izmērs"
+    %select.form-control.position{ style: "width:60%;", name: "positiion" }
+      - for position in Inventory.config.positions
+        %option{ value: @position }= "#{position}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Cena"
+    %select.form-control.breast{ style: "width:60%;", name: "breast" }
+      - for i in [70..250]
+        %option{ value: @breast_size }= "#{i}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Kods"
+    %select.form-control.waist{ style: "width:60%;" name: "waist" }
+      - for i in [60..250]
+        %option{ value: @waist_size }= "#{i}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Gurnu apkārtmērs"
+    %select.form-control.hip{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
+      - for i in [60..250]
+        %option{ value: @hip_size }= "#{i}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Garums"
+    %select.form-control.height{ style: "width:60%;" }
+      - for i in [145..220]
+        %option{ value: @height }= "#{i}"
+  %div.form-group
+    %label.control-label.col-xs-2= "Kājas izmērs"
+    %select.form-control.foot{ style: "width:60%;" }
+      - for i in [34..49]
+        %option{ value: @foot_size }= "#{i}"
+  %button.btn.btn-primary.save= "Saglabāt"
+  %button.btn.btn-primary.cancel= "Atcelt"

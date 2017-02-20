@@ -1,0 +1,6 @@
+%h1= "Zurnals"
+.journal
+%a.btn.btn-info{ href: "#person_products/new" }= "Jauns IAL"
+%a.btn.btn-info{ href: "#person_products/new" }= "Izsniegt IAL"
+%a.btn.btn-info{ href: "#person_products/new"}= "Pasūtīt IAL"
+%a.btn.btn-info{ href: "#person_products/new"}= "Arhīvs"
