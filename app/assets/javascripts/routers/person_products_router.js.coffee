@@ -37,5 +37,5 @@ class Inventory.Routers.PersonProducts extends Backbone.Router
         $('.tasks').html('Ups')
 
   issue: ->
-    issueView = new Inventory.Views.Issue
+    issueView = new Inventory.Views.PersonProductIssue
     @$body.html(issueView.render().el)

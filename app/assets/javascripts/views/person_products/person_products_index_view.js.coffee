@@ -6,8 +6,13 @@ class Inventory.Views.PersonProductIndex extends Backbone.View
   render: ->
     @$el.html(@template(@templateAttributes()))
     @renderJournal()
+    @renderProducts()
     @
 
   renderJournal: ->
     journalView = new Inventory.Views.PersonProductShow
     @$('.journal').append(journalView.render().el)
+
+  renderProducts: ->
+    productView = new Inventory.Views.ProductsView
+    @$('.products').append(productView.render().el)
