@@ -1,0 +1,22 @@
+%a.btn.btn-primary.btn-lg{ :href => new_user_path, role: "button" }= "Jauns Lietotājs"
+%h1= "Lietotāji"
+.content_container
+  %table.table.table-hover.table-striped
+    %thead.table_head
+      %tr
+        %th= "#"
+        %th= "Vārds"
+        %th= "Uzvārds"
+        %th= "Dzimums"
+        %th= "Darba Amats"
+        %th= "Krūšu Apkārtmērs"
+        %th= "Vidukļa Apkārtmērs"
+        %th= "Gurnu Apkārtmērs"
+        %th= "Garums"
+        %th= "Kājas izmērs"
+        %th= "Aktīvs"
+    %tbody.workers
+      - @users.each do |user|
+        %td= user.id
+        %td= user.email
+

@@ -1,5 +1,6 @@
 class Inventory.Views.WorkersIndex extends Backbone.View
   template: JST['workers/index']
+  className: 'content_container'
 
   templateAttributes: ->
     @collection.toJSON()

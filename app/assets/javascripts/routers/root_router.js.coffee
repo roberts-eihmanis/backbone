@@ -1,6 +1,6 @@
 class Inventory.Routers.Root extends Backbone.Router
   routes:
-    '' : 'index'
+    'home' : 'index'
 
   initialize: ->
     @$body = $(document).find('#page-content-wrapper')

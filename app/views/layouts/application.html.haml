@@ -16,16 +16,16 @@
             %li
               %a{:href => "/#workers"} Workers
             %li
-              %a{:href => root_path} Admin
+              %a{:href => "/admin/users"} Admin Panel
             %li
-              %a{:href => edit_user_registration_path, :class => 'navbar-link'} Edit profile
+              %a{:href => root_path } Reports
             %li
               = link_to "Sign out", destroy_user_session_path, :method => :delete
         #page-content-wrapper
           .container-fluid
             .row
-              .col-lg-12
-                %p.notice= notice if notice
-                %p.alert= alert if alert
+              = yield
+              %p.notice= notice if notice
+              %p.alert= alert if alert
     - else
       = yield
