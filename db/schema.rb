@@ -12,6 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20170223083428) do
 
+  create_table "person_equipments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string  "title"
+    t.string  "size"
+    t.string  "manafacturer"
+    t.string  "manafacturer_country"
+    t.integer "price"
+    t.string  "code"
+    t.integer "count"
+  end
+
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
     t.boolean  "completed"

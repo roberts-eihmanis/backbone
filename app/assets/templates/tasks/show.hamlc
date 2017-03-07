@@ -1,11 +1,21 @@
-%table
-  %td
-    = @id
-  %td
-    %input{ type: "checkbox", name: "completed", checked: @completed, value: "#{@completed}"}
-  %td{:class => "#{"completed" if @completed}"}= @name
-  %td{:class => "#{"completed" if @completed}"}= @completed
-  %td
-    %a{:href => "#tasks/edit/#{@id}"} edit
-  %td
-    %button.delete= "Delete"
+%table.table.table-striped
+  %thead
+    %tr
+      %th= "Nummurs"
+      %th= "Pabeigt"
+      %th= "Apraksts"
+      %th= "Pabeigts"
+      %th= "Rediģēt"
+      %th= "Dzēst"
+  %tbody
+    %tr
+      %td
+        = @id
+      %td
+        %input{ type: "checkbox", name: "completed", checked: @completed, value: "#{@completed}"}
+      %td{:class => "#{"completed" if @completed}"}= @name
+      %td{:class => "#{"completed" if @completed}"}= @completed
+      %td
+        %a{:href => "#edit/#{@id}"} edit
+      %td
+        %button.delete= "Delete"
