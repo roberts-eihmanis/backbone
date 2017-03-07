@@ -6,7 +6,7 @@
       %th= "Apraksts"
       %th= "Pabeigts"
       %th= "Rediģēt"
-      %th= "Dzest"
+      %th= "Dzēst"
   %tbody
     %tr
       %td

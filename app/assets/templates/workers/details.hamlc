@@ -27,6 +27,6 @@
         %td= "Augums"
         %td= @height
       %tr
-        %td= "Kājais izmērs"
+        %td= "Kājas izmērs"
         %td= @foot_size
 %a.btn.btn-info.delete_worker{ href: "#", role: "button" }= "Dzēst"

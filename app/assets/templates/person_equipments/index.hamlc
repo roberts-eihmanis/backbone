@@ -3,6 +3,8 @@
 %a.btn.btn-info{ href: "#person_products/new"}= "Pasūtīt IAL"
 %a.btn.btn-info{ href: "#person_products/new"}= "Arhīvs"
 %h1= "Zurnals"
-.journal
+.content_container
+  .journal
 %h1= "IAL noliktavā"
-.products
+.content_container
+  .products
