@@ -23,6 +23,7 @@ gem 'backbone-on-rails'
 gem 'jquery-rails'
 gem 'underscore-rails'
 gem 'haml'
+gem 'simple_form'
 
 # database
 gem 'mysql2', '~> 0.3.18'

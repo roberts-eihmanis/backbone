@@ -1,7 +1,3 @@
-%h1= "New User"
-= form_for @user do |f|
-  E-pasts: #{f.text_field :email}
-  %br/
-  Role    : #{f.check_box :role}
-  %br/
-  = f.submit
+%h1= "Jauns Lietotājs"
+
+= render :partial => "users/form"

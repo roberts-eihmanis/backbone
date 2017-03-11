@@ -1,6 +1,7 @@
 class Inventory.Views.WorkerShow extends Backbone.View
   template: JST['workers/show']
   tagName: 'tr'
+  className: 'row_worker'
 
   events:
     'click .delete_worker' : 'delete'

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :admin_only, :except => :show
+  before_action :authenticate_user!
+  before_action :admin_only, :except => :show
 
   def index
     @users = User.all
@@ -19,14 +19,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
 
   def new
+    @roles = ['admin', 'user', 'worker']
     @user = User.new
   end
 
   def create
     @user = User.new(secure_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'Task was successfully created.' }
@@ -41,9 +44,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(secure_params)
-      redirect_to users_path, :notice => "User updated."
+      redirect_to @user, :notice => "User updated."
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      redirect_to @user, :alert => "Unable to update user."
     end
   end
 
@@ -62,6 +65,6 @@ class UsersController < ApplicationController
   end
 
   def secure_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :phone_number, :role)
   end
 end

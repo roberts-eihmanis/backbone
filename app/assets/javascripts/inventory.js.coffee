@@ -8,6 +8,7 @@ window.Inventory =
       "Golfa Laukuma tehniskais speciālists", "Golfa Laukuma mehāniķis", "Golfa Laukuma laistīšanas sistēmas speciālists",
       "Golfa Laukuma admininstrātors", "Dārzkopības tehniķis", "Valdes Loceklis",
       "Prokūrists", "Golfa Kompleksa Pārvaldnieks"]
+    userRoles: ["admin", "user", "worker"]
   }
   initialize: ->
     #alert 'Hello from Backbone!'

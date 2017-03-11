@@ -1,0 +1,18 @@
+.content_container
+  = simple_form_for @user, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f|
+    %div.form-group
+      %label.control-label.col-xs-2= "Vārds"
+      = f.text_field :first_name, placeholder: 'Vārds', class: 'form-control', style: "width: 60%;"
+    %div.form-group
+      %label.control-label.col-xs-2= "Uzvāŗds"
+      = f.text_field :last_name, placeholder: 'Uzvārds', class: 'form-control', style: "width: 60%;"
+    %div.form-group
+      %label.control-label.col-xs-2= "Parole"
+      = f.password_field :password, placeholder: 'Parole', class: 'form-control', style: "width: 60%;"
+    %div.form-group
+      %label.control-label.col-xs-2= "Epasts"
+      = f.text_field :email, placeholder: 'Epasts', class: 'form-control', style: "width: 60%;"
+    %div.form-group
+      %label.control-label.col-xs-2= "Telefona Nummurs"
+      = f.text_field :phone_number, placeholder: 'Telefona Numurs', class: 'form-control', style: "width: 60%;"
+    = f.submit class: 'btn btn-primary'
