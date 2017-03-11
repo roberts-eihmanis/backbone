@@ -1,0 +1,21 @@
+%h1= "Lietotāja Profils"
+.content_container
+  %table.table
+    %tbody
+      %tr
+        %td= "Vārds"
+        %td= @user.first_name
+      %tr
+        %td= "Uzvārds"
+        %td= @user.last_name
+      %tr
+        %td= "Amats"
+        %td= @position
+      %tr
+        %td= "Loma"
+        %td= @user.role
+      %tr
+        %td= "Telefona Nummurs"
+        %td= @user.phone_number
+  %a.btn.btn-info.delete_worker{ href: "#", role: "button" }= "Dzēst"
+  %a.btn.btn-info.delete_worker{ href: "/admin/users/#{@user.id}/edit", role: "button" }= "Rediģēt"

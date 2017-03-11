@@ -7,16 +7,16 @@
         %th= "#"
         %th= "Vārds"
         %th= "Uzvārds"
-        %th= "Dzimums"
-        %th= "Darba Amats"
-        %th= "Krūšu Apkārtmērs"
-        %th= "Vidukļa Apkārtmērs"
-        %th= "Gurnu Apkārtmērs"
-        %th= "Garums"
-        %th= "Kājas izmērs"
-        %th= "Aktīvs"
+        %th= "Epasts"
+        %th= "Loma"
+        %th= "Telefona Nummurs"
     %tbody.workers
       - @users.each do |user|
-        %td= user.id
-        %td= user.email
+        %tr{ onclick: "window.location.href = '/admin/users/#{user.id}'", style: "cursor: pointer" }
+          %td= user.id
+          %td= user.first_name
+          %td= user.last_name
+          %td= user.email
+          %td= user.role
+          %td= user.phone_number
 
