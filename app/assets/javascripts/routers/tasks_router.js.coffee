@@ -16,14 +16,11 @@ class Inventory.Routers.Tasks extends Backbone.Router
 
     @tasks.fetch
       success: =>
-        console.log 'success'
         @$body.html(@tasksView.render().el)
       error: -> 
-        console.log 'error'
         @$body.html('Ups')
 
   new: ->
-    console.log 'New'
     newForm = new Inventory.Views.TaskForm(model: new Inventory.Models.Task())
     newForm.render()
     

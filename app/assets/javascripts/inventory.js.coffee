@@ -16,7 +16,7 @@ window.Inventory =
     @rootRouter = new Inventory.Routers.Root
     @workersRouter = new Inventory.Routers.Workers
     @tasksRouter = new Inventory.Routers.Tasks
-    @personProductsRouter = new Inventory.Routers.PersonProducts
+    @PersonEquipmentsRouter = new Inventory.Routers.PersonEquipments
 
     Backbone.history.start()
 

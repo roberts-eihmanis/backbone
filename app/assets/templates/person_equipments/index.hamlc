@@ -1,7 +1,7 @@
-%a.btn.btn-info{ href: "#person_products/new" }= "Jauns IAL"
-%a.btn.btn-info{ href: "#person_products/issue" }= "Izsniegt IAL"
-%a.btn.btn-info{ href: "#person_products/new"}= "Pasūtīt IAL"
-%a.btn.btn-info{ href: "#person_products/new"}= "Arhīvs"
+%a.btn.btn-info{ href: "#person_equipments/new" }= "Jauns IAL"
+%a.btn.btn-info{ href: "#person_equipments/issue" }= "Izsniegt IAL"
+%a.btn.btn-info{ href: "#person_equipments/new"}= "Pasūtīt IAL"
+%a.btn.btn-info{ href: "#person_equipments/new"}= "Arhīvs"
 %h1= "Zurnals"
 .content_container
   .journal

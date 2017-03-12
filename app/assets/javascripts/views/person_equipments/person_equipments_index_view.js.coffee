@@ -1,4 +1,4 @@
-class Inventory.Views.PersonProductIndex extends Backbone.View
+class Inventory.Views.PersonEquipmentIndex extends Backbone.View
   template: JST['person_equipments/index']
 
   templateAttributes: ->
@@ -10,7 +10,7 @@ class Inventory.Views.PersonProductIndex extends Backbone.View
     @
 
   renderJournal: ->
-    journalView = new Inventory.Views.PersonProductShow
+    journalView = new Inventory.Views.PersonEquipmentShow
     @$('.journal').append(journalView.render().el)
 
   renderProducts: ->
