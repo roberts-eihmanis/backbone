@@ -2,6 +2,7 @@ class Inventory.Views.PersonEquipmentIndex extends Backbone.View
   template: JST['person_equipments/index']
 
   templateAttributes: ->
+    @collection.toJSON()
 
   render: ->
     @$el.html(@template(@templateAttributes()))
@@ -14,5 +15,7 @@ class Inventory.Views.PersonEquipmentIndex extends Backbone.View
     @$('.journal').append(journalView.render().el)
 
   renderProducts: ->
-    productView = new Inventory.Views.ProductsView
-    @$('.products').append(productView.render().el)
+    @collection.each (product) =>
+      productView = new Inventory.Views.ProductsView(model: product)
+      @$('.products').append(productView.render().el)
+    @

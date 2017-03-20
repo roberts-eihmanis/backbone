@@ -1,2 +1,2 @@
 class Inventory.Models.PersonEquipment extends Backbone.Model
-  urlRoot : '/person_equipment'
+  urlRoot : '/person_equipments'

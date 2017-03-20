@@ -1,22 +1,9 @@
-%table.table.table-bordered
-  %thead
-    %tr
-      %th= "Nr.p.k"
-      %th= "Izsniegšanas datums"
-      %th= "Vārds, Uzvārds"
-      %th= "Amats"
-      %th= "Struktūrvienība"
-      %th= "IAL nosaukums"
-      %th= "IAL lietošanas termiņš"
-      %th= "Izsniedzēja Vārds, Uzvārds, Amats"
-  %tbody
-    %tr
-      %td
-        = @id
-      %td
-      %td{:class => "#{"completed" if @completed}"}= @name
-      %td{:class => "#{"completed" if @completed}"}= @completed
-      %td
-      %td     
-      %td
-      %td
+%td
+  = @id
+%td
+%td
+%td
+%td
+%td
+%td
+%td

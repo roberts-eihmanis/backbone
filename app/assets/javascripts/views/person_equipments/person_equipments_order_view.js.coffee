@@ -1,4 +1,4 @@
-class Inventory.Views.PersonProductsOrder extends Backbone.View
+class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
   template: JST['person_equipments/order']
 
   templateAttributes: ->
