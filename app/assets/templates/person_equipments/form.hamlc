@@ -11,7 +11,7 @@
       %label.control-label.col-xs-2= "Ražotāja valsts"
       %select.form-control.countries{ style: "width:60%;" }
         - for country in Inventory.config.manafacturerCountries
-          %option{ value: "#{country}" }= "#{country}"
+          %option{ value: "#{country}" }= country
     %div.form-group
       %label.control-label.col-xs-2= "Izmērs"
       %input.col-xs-20{ type: "text", value: @size, name: "size", placeholder: "Izmērs", class: "form-control", style: "width: 60%;" }
@@ -25,7 +25,7 @@
       %label.control-label.col-xs-2= "Skaits"
       %select.form-control.count{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
         - for i in [1..30]
-          %option{ value: "#{i}" }= "#{i}"
+          %option{ value: if @count then @count else "#{i}" }= i
 
     %button.btn.btn-primary.save= "Saglabāt"
     %button.btn.btn-primary.cancel= "Atcelt"

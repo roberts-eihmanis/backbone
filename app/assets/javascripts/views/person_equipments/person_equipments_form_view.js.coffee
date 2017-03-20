@@ -21,12 +21,12 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
     e.preventDefault()
     title = @$el.find('input[name=title]').val()
     manafacturer = @$el.find('input[name=manafacturer]').val()
-    manafacturerCountry = @$el.find('select.manafacturer_country').val()
+    manafacturerCountry = @$el.find('select.countries').val()
     size = @$el.find('input[name=size]').val()
     price = @$el.find('input[name=price]').val()
     code = @$el.find('input[name=code]').val()
-    count = @$el.find('input[name=count]').val()
-    debugger
+    count = @$el.find('select.count').val()
+
     saveEquipment = 
       title: title
       manafacturer: manafacturer

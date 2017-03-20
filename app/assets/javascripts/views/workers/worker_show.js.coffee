@@ -5,6 +5,7 @@ class Inventory.Views.WorkerShow extends Backbone.View
 
   events:
     'click .delete_worker' : 'delete'
+    'click row_worker'     : 'open'
 
   templateAttributes: ->
     @model.toJSON()
@@ -22,3 +23,6 @@ class Inventory.Views.WorkerShow extends Backbone.View
         console.log 'nok '
     )
     false
+
+  open: ->
+    Backbone.history.navigate("#workers/show/#{@model.id}", trigger: true)

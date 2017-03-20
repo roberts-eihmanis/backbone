@@ -1,10 +1,9 @@
 class Inventory.Views.WorkerForm extends Backbone.View
   template: JST['workers/form']
   
-  events: {
-    'click .save' : 'save'
+  events: 
+    'click .save'  : 'save'
     'click .cancel': 'cancel'
-  }
   
   templateAttributes: ->
     @model.toJSON()
