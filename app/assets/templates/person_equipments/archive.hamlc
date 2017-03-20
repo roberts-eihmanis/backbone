@@ -3,12 +3,27 @@
   %h2= "Pasūtījumu vēture"
   %div.form-group
     %label.control-label.col-xs-2= "Datums no:"
-    %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+    %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 20%;" }
   %div.form-group
     %label.control-label.col-xs-2= "Datums līdz:"
-    %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+    %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 20%;" }
   %div.form-group
     %button.btn.btn-primary.save= "Atlasīt"
+    /tabula
+  %table.table.table-bordered{ style: "margin-top:10px;"}
+    %thead
+      %tr
+        %th= "Nr.p.k"
+        %th= "Datums"
+        %th= "Pasūtījuma Nr."
+        %th= "Saite"
+    %tbody
+      %tr
+        %td
+          = @id
+        %td
+        %td{:class => "#{"completed" if @completed}"}= @name
+        %td{:class => "#{"completed" if @completed}"}= @completed
 
 %h2= "IAL"
 .content_container
@@ -17,3 +32,18 @@
     %span.input-group-btn
       %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
     %input.form-control{ type: 'text', placeholder: 'Meklēt'}
+    /tabula
+  %table.table.table-bordered{ style: "margin-top:10px;"}
+    %thead
+      %tr
+        %th= "Nr.p.k"
+        %th= "IAL Nosaukums"
+        %th= "Iegādes datums"
+        %th= "Cena"
+    %tbody
+      %tr
+        %td
+          = @id
+        %td
+        %td{:class => "#{"completed" if @completed}"}= @name
+        %td{:class => "#{"completed" if @completed}"}= @completed
