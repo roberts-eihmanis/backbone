@@ -1,30 +1,31 @@
 %h2= "Jauns IAL"
-%form.form-horizontal
-  %div.form-group.first_name
-    %label.control-label.col-xs-2= "Nosaukums"
-    %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "Uzņēmuma nosaukums", class: "form-control", style: "width: 60%;" }
-  %div.form-group.last_name
-    %label.control-label.col-xs-2= "Ražotājs"
-    %input{ type: "text", value: @last_name, name: "last_name", placeholder: "Ražotājs", class: "form-control", style: "width: 60%;" }
-  %div.form-group
-    %label.control-label.col-xs-2= "Ražotāja valsts"
-    %select.form-control.gender{ style: "width:60%;" }
-      %option{ value: "" }= "Latvija"
-      %option{ value: "" }= "Vācija"
-  %div.form-group
-    %label.control-label.col-xs-2= "Izmērs"
-    %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "Izmērs", class: "form-control", style: "width: 60%;" }
-  %div.form-group
-    %label.control-label.col-xs-2= "Cena"
-    %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "Cena", class: "form-control", style: "width: 60%;" }
-  %div.form-group
-    %label.control-label.col-xs-2= "Kods"
-    %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "Kods", class: "form-control", style: "width: 60%;" }
-  %div.form-group
-    %label.control-label.col-xs-2= "Skaits"
-    %select.form-control.hip{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
-      - for i in [1..30]
-        %option{ value: @hip_size }= "#{i}"
+.content_container
+  %form.form-horizontal
+    %div.form-group
+      %label.control-label.col-xs-2= "Nosaukums"
+      %input.col-xs-20{ type: "text", value: @title, name: "title", placeholder: "Ekipējuma nosaukums", class: "form-control", style: "width: 60%;" }
+    %div.form-group
+      %label.control-label.col-xs-2= "Ražotājs"
+      %input{ type: "text", value: @manafacturer, name: "manafacturer", placeholder: "Ražotājs", class: "form-control", style: "width: 60%;" }
+    %div.form-group.manafacturer_country
+      %label.control-label.col-xs-2= "Ražotāja valsts"
+      %select.form-control.countries{ style: "width:60%;" }
+        - for country in Inventory.config.manafacturerCountries
+          %option{ value: "#{country}" }= "#{country}"
+    %div.form-group
+      %label.control-label.col-xs-2= "Izmērs"
+      %input.col-xs-20{ type: "text", value: @size, name: "size", placeholder: "Izmērs", class: "form-control", style: "width: 60%;" }
+    %div.form-group
+      %label.control-label.col-xs-2= "Cena"
+      %input.col-xs-20{ type: "value", value: @price, name: "price", placeholder: "Cena", class: "form-control", style: "width: 60%;" }
+    %div.form-group
+      %label.control-label.col-xs-2= "Kods"
+      %input.col-xs-20{ type: "text", value: @code, name: "code", placeholder: "Kods", class: "form-control", style: "width: 60%;" }
+    %div.form-group
+      %label.control-label.col-xs-2= "Skaits"
+      %select.form-control.count{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
+        - for i in [1..30]
+          %option{ value: "#{i}" }= "#{i}"
 
-  %button.btn.btn-primary.save= "Saglabāt"
-  %button.btn.btn-primary.cancel= "Atcelt"
+    %button.btn.btn-primary.save= "Saglabāt"
+    %button.btn.btn-primary.cancel= "Atcelt"

@@ -1,10 +1,31 @@
 %a.btn.btn-info{ href: "#person_equipments/new" }= "Jauns IAL"
 %a.btn.btn-info{ href: "#person_equipments/issue" }= "Izsniegt IAL"
-%a.btn.btn-info{ href: "#person_equipments/new"}= "Pasūtīt IAL"
-%a.btn.btn-info{ href: "#person_equipments/new"}= "Arhīvs"
+%a.btn.btn-info{ href: "#person_equipments/order"}= "Pasūtīt IAL"
+%a.btn.btn-info{ href: "#person_equipments/archive"}= "Arhīvs"
 %h1= "Zurnals"
 .content_container
-  .journal
+  %table.table.table-hover.table-striped
+    %thead.table_head
+      %tr
+        %th= "Nr.p.k"
+        %th= "Izsniegšanas datums"
+        %th= "Vārds, Uzvārds"
+        %th= "Amats"
+        %th= "Struktūrvienība"
+        %th= "IAL nosaukums"
+        %th= "IAL lietošanas termiņš"
+        %th= "Izsniedzēja Vārds, Uzvārds, Amats"
+    %tbody.journal
 %h1= "IAL noliktavā"
 .content_container
-  .products
+  %table.table.table-hover.table-striped
+    %thead.table_head
+      %tr
+        %th= "Nr.p.k"
+        %th= "Nosaukums"
+        %th= "Ražotājs"
+        %th= "Ražotāja Valsts"
+        %th= "Izmērs"
+        %th= "Cena"
+        %th= "Skaits"
+    %tbody.products

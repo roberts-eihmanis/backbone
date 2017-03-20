@@ -5,4 +5,5 @@ class Inventory.Views.PersonEquipmentIssue extends Backbone.View
 
   render: ->
     @$el.html(@template(@templateAttributes()))
+    # @$('.datepicker').datepicker()
     @

@@ -1,0 +1,19 @@
+%h1= "Arhīvs"
+.content_container
+  %h2= "Pasūtījumu vēture"
+  %div.form-group
+    %label.control-label.col-xs-2= "Datums no:"
+    %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+  %div.form-group
+    %label.control-label.col-xs-2= "Datums līdz:"
+    %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+  %div.form-group
+    %button.btn.btn-primary.save= "Atlasīt"
+
+%h2= "IAL"
+.content_container
+  %div.col-lg-4
+  %div.input-group{ style: 'padding-top:25px;'}
+    %span.input-group-btn
+      %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
+    %input.form-control{ type: 'text', placeholder: 'Meklēt'}

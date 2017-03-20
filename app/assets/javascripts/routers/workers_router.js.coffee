@@ -11,7 +11,6 @@ class Inventory.Routers.Workers extends Backbone.Router
     @$body = $(document).find('#page-content-wrapper')
 
   index: ->
-    console.log 'WorkersIndex'
     @inventoryWorkers.fetch
       success: =>
         console.log 'success'

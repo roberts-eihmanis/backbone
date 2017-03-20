@@ -1,14 +1,14 @@
-%table.table.table-bordered
-  %thead
-    %tr
-      %th= "Nr.p.k"
-      %th= "Nosaukums"
-      %th= "Izmērs"
-      %th= "Skaits"
-  %tbody
-    %tr
-      %td
-        = @id
-      %td
-      %td{:class => "#{"completed" if @completed}"}= @name
-      %td{:class => "#{"completed" if @completed}"}= @completed
+%td
+  = @id
+%td
+  = @title
+%td
+  = @manafacturer
+%td
+  = @manafacturer_country
+%td
+  = @size
+%td
+  = @price
+%td
+  = @count

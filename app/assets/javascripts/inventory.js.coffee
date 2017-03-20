@@ -9,6 +9,7 @@ window.Inventory =
       "Golfa Laukuma admininstrātors", "Dārzkopības tehniķis", "Valdes Loceklis",
       "Prokūrists", "Golfa Kompleksa Pārvaldnieks"]
     userRoles: ["admin", "user", "worker"]
+    manafacturerCountries: ["Latvia", "Germany", "Poland", "China"]
   }
   initialize: ->
     #alert 'Hello from Backbone!'

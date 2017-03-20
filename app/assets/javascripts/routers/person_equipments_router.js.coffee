@@ -6,6 +6,7 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
     'person_equipments/show/:id' : 'show'
     'person_equipments/issue' : 'issue'
     'person_equipments/order' : 'order'
+    'person_equipments/archive' : 'archive'
     
   initialize: ->
     @personEquipments = new Inventory.Collections.PersonEquipments
@@ -13,7 +14,11 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
     @$body = $(document).find('#page-content-wrapper')
 
   index: ->
-    @$body.html(@productsView.render().el)
+    @personEquipments.fetch
+      success: =>
+        @$body.html(@productsView.render().el)
+      error: =>
+        @$body.html('Ups')
 
   new: ->
     model = new Inventory.Models.PersonEquipment
@@ -30,9 +35,16 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
         editForm.render()
         @$body.html(editForm.el)
       error: ->
-        console.log 'error'
         $('.tasks').html('Ups')
 
   issue: ->
     issueView = new Inventory.Views.PersonEquipmentIssue
     @$body.html(issueView.render().el)
+
+  order: ->
+    orderView = new Inventory.Views.PersonEquipmentsOrder
+    @$body.html(orderView.render().el)
+
+  archive: ->
+    archiveView = new Inventory.Views.PersonEquipmentsArchive
+    @$body.html(archiveView.render().el)
