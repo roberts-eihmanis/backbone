@@ -30,3 +30,4 @@
         %td= "Kājas izmērs"
         %td= @foot_size
 %a.btn.btn-info.delete_worker{ href: "#", role: "button" }= "Dzēst"
+%a.btn.btn-info.back{ href: "#workers", role: "button" }= "Atpakaļ"

@@ -3,7 +3,6 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
     'person_equipments' : 'index'
     'person_equipments/new' : 'new'
     'person_equipments/edit/:id' : 'edit'
-    'person_equipments/show/:id' : 'show'
     'person_equipments/issue' : 'issue'
     'person_equipments/order' : 'order'
     'person_equipments/archive' : 'archive'

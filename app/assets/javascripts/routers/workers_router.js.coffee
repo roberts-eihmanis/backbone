@@ -13,10 +13,8 @@ class Inventory.Routers.Workers extends Backbone.Router
   index: ->
     @inventoryWorkers.fetch
       success: =>
-        console.log 'success'
         @$body.html(@workersView.render().el)
       error: =>
-        console.log 'error'
         @$body.html('Ups')
 
   new: ->
@@ -34,7 +32,6 @@ class Inventory.Routers.Workers extends Backbone.Router
         detailsView.render()
         @$body.html(detailsView.el)
       error: =>
-        console.log 'error'
         @$body.html('Ups')
 
 

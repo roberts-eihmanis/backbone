@@ -5,7 +5,7 @@ class Inventory.Views.WorkerShow extends Backbone.View
 
   events:
     'click .delete_worker' : 'delete'
-    'click row_worker'     : 'open'
+    'click td'             : 'open'
 
   templateAttributes: ->
     @model.toJSON()
