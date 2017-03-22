@@ -4,15 +4,14 @@ window.Inventory =
   Views: {}
   Routers: {}
   config: {
-    positions: ["Golfa Laukuma uzturēšanas nodaļas vadītājs", "Golfa Laukuma uzturēšanas nodaļas speciālists", 
-      "Golfa Laukuma tehniskais speciālists", "Golfa Laukuma mehāniķis", "Golfa Laukuma laistīšanas sistēmas speciālists",
-      "Golfa Laukuma admininstrātors", "Dārzkopības tehniķis", "Valdes Loceklis",
-      "Prokūrists", "Golfa Kompleksa Pārvaldnieks"]
+    positions: {
+      "Administrācija": ["Golfa Laukuma admininstrātors", "Valdes Loceklis", "Prokūrists", "Golfa Kompleksa Pārvaldnieks"], 
+      "Uzturēšanas nodaļa": ["Dārzkopības tehniķis", "Golfa Laukuma uzturēšanas nodaļas speciālists", "Golfa Laukuma laistīšanas sistēmas speciālists"], 
+      "Apkopes Daļa": ["Golfa Laukuma tehniskais speciālists", "Golfa Laukuma mehāniķis"] }
     userRoles: ["admin", "user", "worker"]
     manafacturerCountries: ["Latvia", "Germany", "Poland", "China"]
   }
   initialize: ->
-    #alert 'Hello from Backbone!'
     Backbone.history = new Backbone.History
     @rootRouter = new Inventory.Routers.Root
     @workersRouter = new Inventory.Routers.Workers

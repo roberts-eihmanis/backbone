@@ -13,10 +13,11 @@
         %option{ value: "Virietis" }= "Vīrietis"
         %option{ value: "Sieviete" }= "Sieviete"
     %div.form-group
+      %label.control-label.col-xs-2= "Struktūrvienība"
+      %select.form-control.org_unit{ style: "width:60%;", name: "positiion" }
+    %div.form-group
       %label.control-label.col-xs-2= "Amats"
       %select.form-control.position{ style: "width:60%;", name: "positiion" }
-        - for position in Inventory.config.positions
-          %option{ value: "#{position}" }= "#{position}"
     %div.form-group
       %label.control-label.col-xs-2= "Krūšu apkārtmērs"
       %select.form-control.breast{ style: "width:60%;", name: "breast" }

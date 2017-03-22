@@ -1,13 +1,7 @@
 %td= @id
 %td= @first_name
 %td= @last_name
-%td= @gender
 %td= @position
-%td= @breast_size
-%td= @waist_size
-%td= @hip_size
-%td= @height
-%td= @foot_size
 %td= @active
 %td
   %button.btn.btn-primary.delete_worker= "Delete"

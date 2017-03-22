@@ -4,6 +4,7 @@ class Inventory.Views.WorkerForm extends Backbone.View
   events: 
     'click .save'  : 'save'
     'click .cancel': 'cancel'
+    'change select.org_unit' : 'renderPositions'
   
   templateAttributes: ->
     @model.toJSON()
@@ -11,7 +12,48 @@ class Inventory.Views.WorkerForm extends Backbone.View
   render: ->
     html = @template(@templateAttributes())
     @$el.html html
+    @renderOrgUnits()
+    @renderPositions()
     @
+
+  getUnits: ->
+    orgUnits = []
+    for unit in Object.keys(Inventory.config.positions)
+      orgUnits.push(unit)
+    orgUnits
+
+  getPositions: (unit)->
+    if unit == '-1'
+      @positions()
+    else
+      Inventory.config.positions[unit]
+
+  positions: ->
+    positions = []
+    for position in Object.values(Inventory.config.positions)
+      for pos in position
+        positions.push(pos)
+    positions
+
+  renderOrgUnits: ->
+    element = @$('select.org_unit')
+    element.append $("<option>",
+        value: -1
+        text: "Visi"
+      )
+    for unit in @getUnits()
+      option = $("<option>", value: unit, text: unit)
+      element.append option
+    false
+
+  renderPositions: ->
+    @$('select.position').empty()
+    unit = @$('select.org_unit').val()
+    element = @$('select.position')
+    for pos in @getPositions(unit)
+      option = $("<option>", value: pos, text: pos)
+      element.append option
+    false
 
   cancel: (e) ->
     e?.preventDefault()
@@ -22,6 +64,7 @@ class Inventory.Views.WorkerForm extends Backbone.View
     firstName = @$el.find('input[name=first_name]').val()
     lastName = @$el.find('input[name=last_name]').val()
     newGender = @$el.find('select.gender').val()
+    newUnit = @$el.find('select.org_unit').val()
     newPosition = @$el.find('select.position').val()
     newBreast = @$el.find('select.breast').val()
     newWaist = @$el.find('select.waist').val()
@@ -33,6 +76,7 @@ class Inventory.Views.WorkerForm extends Backbone.View
       first_name: firstName
       last_name: lastName
       gender: newGender
+      unit: newUnit
       position: newPosition
       breast_size: newBreast
       waist_size: newWaist
@@ -48,4 +92,3 @@ class Inventory.Views.WorkerForm extends Backbone.View
         console.log "#{model} Error: #{error}"
     )
     @
-

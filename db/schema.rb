@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320211923) do
+ActiveRecord::Schema.define(version: 20170322215316) do
 
   create_table "person_equipments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string  "title"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20170320211923) do
     t.string  "code"
     t.integer "count"
     t.integer "worker_id"
+    t.integer "issuer_id"
+    t.string  "warranty"
   end
 
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
@@ -55,16 +57,19 @@ ActiveRecord::Schema.define(version: 20170320211923) do
   end
 
   create_table "workers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "gender"
-    t.string  "position"
-    t.integer "breast_size"
-    t.integer "waist_size"
-    t.integer "hip_size"
-    t.integer "height"
-    t.integer "foot_size"
-    t.boolean "active",      default: true
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.string   "position"
+    t.integer  "breast_size"
+    t.integer  "waist_size"
+    t.integer  "hip_size"
+    t.integer  "height"
+    t.integer  "foot_size"
+    t.boolean  "active",      default: true
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.string   "unit"
   end
 
 end

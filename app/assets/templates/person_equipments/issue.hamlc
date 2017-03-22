@@ -17,7 +17,6 @@
     %div.form-group
       %label.control-label.col-xs-2= "Izsniegšanas datums"
       %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
-   
 
     %div.form-group
       %label.control-label.col-xs-2= "Izsniedzējs"
