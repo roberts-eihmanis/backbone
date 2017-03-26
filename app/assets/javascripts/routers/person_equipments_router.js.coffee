@@ -37,8 +37,14 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
         $('.tasks').html('Ups')
 
   issue: ->
-    issueView = new Inventory.Views.PersonEquipmentIssue
-    @$body.html(issueView.render().el)
+    inventoryWorkers = new Inventory.Collections.Workers
+    issueModel = new Inventory.Models.PersonEquipment
+    inventoryWorkers.fetch
+      success: =>
+        issueView = new Inventory.Views.PersonEquipmentIssue(collection: inventoryWorkers, model: issueModel)
+        @$body.html(issueView.render().el)
+      error: =>
+        @$body.html('Ups')
 
   order: ->
     orderView = new Inventory.Views.PersonEquipmentsOrder

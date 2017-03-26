@@ -1,6 +1,11 @@
 %h2= "Jauns IAL"
 .content_container
   %form.form-horizontal
+    %div.form-group.manafacturer_country
+      %label.control-label.col-xs-2= "Kategorija"
+      %select.form-control.category{ style: "width:60%;" }
+        - for category in Inventory.config.equipmentCategories
+          %option{ value: "#{category}" }= category
     %div.form-group
       %label.control-label.col-xs-2= "Nosaukums"
       %input.col-xs-20{ type: "text", value: @title, name: "title", placeholder: "Ekipējuma nosaukums", class: "form-control", style: "width: 60%;" }

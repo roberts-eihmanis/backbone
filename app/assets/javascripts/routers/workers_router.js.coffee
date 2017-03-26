@@ -24,7 +24,6 @@ class Inventory.Routers.Workers extends Backbone.Router
     @$body.html(newForm.el)
 
   show: (id) ->
-    console.log "show"
     @inventoryWorkers = new Inventory.Models.Worker(id: id)
     @inventoryWorkers.fetch
       success: =>
@@ -36,7 +35,6 @@ class Inventory.Routers.Workers extends Backbone.Router
 
 
   edit: (id) ->
-    console.log 'Edit'
     @inventoryWorkers = new Inventory.Models.Worker(id: id)
     @inventoryWorkers.fetch
       success: =>

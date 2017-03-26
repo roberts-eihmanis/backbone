@@ -19,6 +19,7 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
 
   save: (e) ->
     e.preventDefault()
+    category = @$el.find('select.category').val()
     title = @$el.find('input[name=title]').val()
     manafacturer = @$el.find('input[name=manafacturer]').val()
     manafacturerCountry = @$el.find('select.countries').val()

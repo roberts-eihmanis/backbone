@@ -10,6 +10,7 @@ window.Inventory =
       "Apkopes Daļa": ["Golfa Laukuma tehniskais speciālists", "Golfa Laukuma mehāniķis"] }
     userRoles: ["admin", "user", "worker"]
     manafacturerCountries: ["Latvia", "Germany", "Poland", "China"]
+    equipmentCategories: ["Cimdi", "Apavi", "Apģērbs", "Aizsarglīdzekļi", "Citi"]
   }
   initialize: ->
     Backbone.history = new Backbone.History

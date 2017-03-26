@@ -32,6 +32,7 @@ class PersonEquipmentsController < ApplicationController
   # POST /person_equipments
   # POST /person_equipments.json
   def create
+    binding.pry
     @person_equipment = PersonEquipment.new(person_equipment_params)
 
     respond_to do |format|
@@ -78,6 +79,7 @@ class PersonEquipmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_equipment_params
-      params.require(:person_equipment).permit(:title, :size, :manafacturer, :manafacturer_country, :price, :code, :count)
+      params.require(:person_equipment).permit(:title, :size, :manafacturer, :manafacturer_country,
+        :price, :code, :count, :worker_id, :issuer_id, :warranty, :category, :article_number)
     end
 end
