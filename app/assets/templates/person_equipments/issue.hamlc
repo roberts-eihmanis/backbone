@@ -6,9 +6,7 @@
       %select.form-control.org_unit{ style: "width:60%;", name: "positiion" }
     %div.form-group
       %label.control-label.col-xs-2= "Darbinieks"
-      %select.form-control.gender{ style: "width:60%;" }
-        - for worker in @workers
-          %option{ value: worker.id }= "#{worker.first_name} #{worker.last_name}"
+      %select.form-control.workers{ style: "width:60%;" }
     %div.form-group.first_name
       %label.control-label.col-xs-2= "IAL"
       %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "IAL", class: "form-control", style: "width: 60%;" }
@@ -18,13 +16,12 @@
    
     %div.form-group
       %label.control-label.col-xs-2= "Izsniegšanas datums"
-      %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+      %input.col-xs-20#datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
 
     %div.form-group
       %label.control-label.col-xs-2= "Izsniedzējs"
       %select.form-control.gender{ style: "width:60%;" }
         %option{ value: "" }= "Kārlis Lūsis"
         %option{ value: "" }= "Irēna Vītola"
-
     %button.btn.btn-primary.save= "Saglabāt"
     %button.btn.btn-primary.cancel= "Atcelt"

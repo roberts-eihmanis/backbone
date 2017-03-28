@@ -7,6 +7,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'jquery-ui-sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -21,6 +22,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'backbone-on-rails'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'underscore-rails'
 gem 'haml'
 gem 'simple_form'

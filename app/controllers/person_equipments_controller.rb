@@ -32,18 +32,13 @@ class PersonEquipmentsController < ApplicationController
   # POST /person_equipments
   # POST /person_equipments.json
   def create
-    binding.pry
-    @person_equipment = PersonEquipment.new(person_equipment_params)
-
-    respond_to do |format|
-      if @person_equipment.save
-        format.html { redirect_to @person_equipment, notice: 'Person Equipment was successfully created.' }
-        format.json { redirect_to @person_equipment }
-      else
-        format.html { render :new }
-        format.json { render json: @person_equipment.errors, status: :unprocessable_entity }
-      end
+    count = person_equipment_params[:count].to_i
+    params = person_equipment_params.merge(count: 1)
+    @person_equipments = []
+    count.times do |i|
+      @person_equipments << PersonEquipment.new(params)
     end
+    @person_equipments.each(&:save)
   end
 
   # PATCH/PUT /person_equipments/1
@@ -53,7 +48,6 @@ class PersonEquipmentsController < ApplicationController
       if @person_equipment.update(person_equipment_params)
         format.html { redirect_to @person_equipment, notice: 'Person Equipment was successfully updated.' }
         format.json { redirect_to @person_equipment, status: 303 }
-#        format.json { render json: 'updated', status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @person_equipment.errors, status: :unprocessable_entity }
