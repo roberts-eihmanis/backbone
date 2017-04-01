@@ -8,12 +8,12 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
     'person_equipments/archive' : 'archive'
     
   initialize: ->
-    @personEquipments = new Inventory.Collections.PersonEquipments
-    @productsView = new Inventory.Views.PersonEquipmentIndex(collection: @personEquipments)
+    @equipments = new Inventory.Collections.Equipments
+    @productsView = new Inventory.Views.PersonEquipmentIndex(collection: @equipments)
     @$body = $(document).find('#page-content-wrapper')
 
   index: ->
-    @personEquipments.fetch
+    @equipments.fetch
       success: =>
         @$body.html(@productsView.render().el)
       error: =>
@@ -37,12 +37,15 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
         $('.tasks').html('Ups')
 
   issue: ->
+    users = new Inventory.Collections.Users
     inventoryWorkers = new Inventory.Collections.Workers
     issueModel = new Inventory.Models.PersonEquipment
     inventoryWorkers.fetch
       success: =>
-        issueView = new Inventory.Views.PersonEquipmentIssue(collection: inventoryWorkers, model: issueModel)
-        @$body.html(issueView.render().el)
+        users.fetch
+          success: =>
+            issueView = new Inventory.Views.PersonEquipmentIssue(collection: [inventoryWorkers, users], model: issueModel)
+            @$body.html(issueView.render().el)
       error: =>
         @$body.html('Ups')
 

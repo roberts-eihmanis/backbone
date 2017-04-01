@@ -21,7 +21,7 @@
     %div.form-group
       %label.control-label.col-xs-2= "Izsniedzējs"
       %select.form-control.gender{ style: "width:60%;" }
-        %option{ value: "" }= "Kārlis Lūsis"
-        %option{ value: "" }= "Irēna Vītola"
+        - for user in @users
+          %option{ value: user.id, text: "#{user.first_name}"}= "#{user.first_name} #{user.last_name}"
     %button.btn.btn-primary.save= "Saglabāt"
     %button.btn.btn-primary.cancel= "Atcelt"

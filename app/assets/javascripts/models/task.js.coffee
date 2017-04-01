@@ -4,7 +4,3 @@ class Inventory.Models.Task extends Backbone.Model
   defaults:
     name: 'What you want to do?'
     completed: false
-  
-
-  initialize: ->
-    console.log 'Model'

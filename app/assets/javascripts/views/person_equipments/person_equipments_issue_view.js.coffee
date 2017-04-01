@@ -7,8 +7,9 @@ class Inventory.Views.PersonEquipmentIssue extends Backbone.View
     'change select.org_unit' : 'renderWorkers'
 
   templateAttributes: ->
-    workers = @collection.toJSON()
-    _.extend { workers }, @model.toJSON()
+    workers = @collection[0].toJSON()
+    users = @collection[1].toJSON()
+    _.extend { workers, users }, @model.toJSON()
 
   render: ->
     @$el.html(@template(@templateAttributes()))
@@ -18,6 +19,7 @@ class Inventory.Views.PersonEquipmentIssue extends Backbone.View
 
   renderWorkers: ->
     workers = @collection
+    @$('select.workers').empty()
     element = @$('select.workers')
     orgUnit = @$('select.org_unit').val()
     unless orgUnit == -1
