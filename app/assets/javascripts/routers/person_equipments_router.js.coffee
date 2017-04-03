@@ -9,13 +9,23 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
     
   initialize: ->
     @equipments = new Inventory.Collections.Equipments
-    @productsView = new Inventory.Views.PersonEquipmentIndex(collection: @equipments)
+    @personEquipments = new Inventory.Collections.PersonEquipments
+    @users = new Inventory.Collections.Users
+    @workers = new Inventory.Collections.Workers
+    @productsView = new Inventory.Views.PersonEquipmentIndex(
+      collection: [@equipments, @personEquipments, @users, @workers])
     @$body = $(document).find('#page-content-wrapper')
 
   index: ->
     @equipments.fetch
       success: =>
-        @$body.html(@productsView.render().el)
+        @personEquipments.fetch
+          success: =>
+            @users.fetch
+              success: =>
+                @workers.fetch
+                  success: =>
+                    @$body.html(@productsView.render().el)
       error: =>
         @$body.html('Ups')
 
@@ -27,10 +37,10 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
     @$body.html(newForm.el)
 
   edit: (id) ->
-    @personEquipment = new Inventory.Models.PersonEquipment(id: id)
-    @personEquipment.fetch
+    personEquipment = new Inventory.Models.PersonEquipment(id: id)
+    personEquipment.fetch
       success: =>
-        editForm = new Inventory.Views.PersonEquipmentForm(model: @personEquipment)
+        editForm = new Inventory.Views.PersonEquipmentForm(model: personEquipment)
         editForm.render()
         @$body.html(editForm.el)
       error: ->
@@ -39,13 +49,16 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
   issue: ->
     users = new Inventory.Collections.Users
     inventoryWorkers = new Inventory.Collections.Workers
-    issueModel = new Inventory.Models.PersonEquipment
+    issueEquipment = new Inventory.Collections.PersonEquipments
     inventoryWorkers.fetch
       success: =>
         users.fetch
           success: =>
-            issueView = new Inventory.Views.PersonEquipmentIssue(collection: [inventoryWorkers, users], model: issueModel)
-            @$body.html(issueView.render().el)
+            issueEquipment.fetch
+              success: =>
+                issueView = new Inventory.Views.PersonEquipmentIssue(
+                  collection: [inventoryWorkers, users, issueEquipment])
+                @$body.html(issueView.render().el)
       error: =>
         @$body.html('Ups')
 

@@ -27,6 +27,9 @@
       %label.control-label.col-xs-2= "Kods"
       %input.col-xs-20{ type: "text", value: @code, name: "code", placeholder: "Kods", class: "form-control", style: "width: 60%;" }
     %div.form-group
+      %label.control-label.col-xs-2= "Garantija"
+      %input.col-xs-20{ type: "text", value: @code, name: "warranty", placeholder: "Garantija", class: "form-control", style: "width: 60%;" }
+    %div.form-group
       %label.control-label.col-xs-2= "Skaits"
       %select.form-control.count{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
         - for i in [1..30]

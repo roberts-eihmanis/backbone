@@ -39,6 +39,10 @@ class PersonEquipmentsController < ApplicationController
       @person_equipments << PersonEquipment.new(params)
     end
     @person_equipments.each(&:save)
+    respond_to do |format|
+      format.html { redirect_to @person_equipments.last, status: 303 }
+      format.json { redirect_to @person_equipments.last, status: 303 }
+    end
   end
 
   # PATCH/PUT /person_equipments/1
@@ -74,6 +78,6 @@ class PersonEquipmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_equipment_params
       params.require(:person_equipment).permit(:title, :size, :manafacturer, :manafacturer_country,
-        :price, :code, :count, :worker_id, :issuer_id, :warranty, :category, :article_number)
+        :price, :code, :count, :worker_id, :issuer_id, :warranty, :category, :article_number, :issuer_date)
     end
 end

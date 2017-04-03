@@ -7,20 +7,25 @@
     %div.form-group
       %label.control-label.col-xs-2= "Darbinieks"
       %select.form-control.workers{ style: "width:60%;" }
-    %div.form-group.first_name
+    %div.form-group
+      %label.control-label.col-xs-2= "IAL Kategorija"
+      %select.col-xs-20.equipment_category{ placeholder: "IAL", class: "form-control", style: "width: 60%;" }
+        %option= "Visi"
+        - for category in Inventory.config.equipmentCategories
+          %option{ valiue: category, text: "#{category}" }= category
+    %div.form-group
       %label.control-label.col-xs-2= "IAL"
-      %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "IAL", class: "form-control", style: "width: 60%;" }
+      %input.col-xs-20..equipment{ placeholder: "IAL", class: "form-control", style: "width: 60%;" }
     %div.form-group
       %label.control-label.col-xs-2= "Izmērs"
-      %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "Izmērs", class: "form-control", style: "width: 60%;" }
-   
+      %select.col-xs-20.size{ placeholder: "Izmērs", class: "form-control", style: "width: 60%;" }
     %div.form-group
       %label.control-label.col-xs-2= "Izsniegšanas datums"
-      %input.col-xs-20#datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+      %input.col-xs-20.date{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
 
     %div.form-group
       %label.control-label.col-xs-2= "Izsniedzējs"
-      %select.form-control.gender{ style: "width:60%;" }
+      %select.form-control.users{ style: "width:60%;" }
         - for user in @users
           %option{ value: user.id, text: "#{user.first_name}"}= "#{user.first_name} #{user.last_name}"
     %button.btn.btn-primary.save= "Saglabāt"

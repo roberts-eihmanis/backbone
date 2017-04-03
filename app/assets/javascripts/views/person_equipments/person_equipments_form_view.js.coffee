@@ -24,8 +24,10 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
     manafacturer = @$el.find('input[name=manafacturer]').val()
     manafacturerCountry = @$el.find('select.countries').val()
     size = @$el.find('input[name=size]').val()
+    category = @$el.find('select.category').val()
     price = @$el.find('input[name=price]').val()
     code = @$el.find('input[name=code]').val()
+    warranty = @$el.find('input[name=warranty]').val()
     count = @$el.find('select.count').val()
 
     saveEquipment = 
@@ -34,7 +36,9 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
       manafacturer_country: manafacturerCountry
       size: size
       price: price
+      category: category
       code: code
+      warranty: warranty
       count: count
 
     @model.save(saveEquipment,
