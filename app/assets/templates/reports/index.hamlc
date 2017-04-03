@@ -1,1 +1,10 @@
 %h1= "Atskaites"
+%class="navbar navbar-default"
+  %class="container-fluid"
+    %class="navbar-header"
+      %a.navbar-brand= "WebSiteName"
+    %ul.nav.navbar-nav
+      %li{ href: "#"}= "Pēc darbinieka"
+      %li{ href: "#"}= "Pēc IAL"
+      %li{ href: "#"}= "Pēc Perioda"
+        
