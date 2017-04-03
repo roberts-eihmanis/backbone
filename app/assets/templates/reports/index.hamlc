@@ -7,4 +7,3 @@
       %li{ href: "#"}= "Pēc darbinieka"
       %li{ href: "#"}= "Pēc IAL"
       %li{ href: "#"}= "Pēc Perioda"
-        

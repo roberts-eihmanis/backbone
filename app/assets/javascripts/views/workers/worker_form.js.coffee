@@ -29,7 +29,6 @@ class Inventory.Views.WorkerForm extends Backbone.View
       Inventory.config.positions[unit]
 
   positions: ->
-    debugger
     positions = []
     for position in Object.values(Inventory.config.positions)
       for pos in position
