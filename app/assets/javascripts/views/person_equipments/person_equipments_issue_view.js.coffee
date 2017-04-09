@@ -88,10 +88,8 @@ class Inventory.Views.PersonEquipmentIssue extends Backbone.View
       issuer_date: issueDate
 
     model.save(issuedEquipment,
-      success: =>
+      success: ->
         Backbone.history.navigate('#person_equipments', trigger: true)
       error: (model, error) ->
         console.log "#{model} Error: #{error}"
     )
-
-

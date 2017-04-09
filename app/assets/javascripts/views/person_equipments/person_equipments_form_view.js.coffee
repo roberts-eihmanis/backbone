@@ -29,6 +29,7 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
     code = @$el.find('input[name=code]').val()
     warranty = @$el.find('input[name=warranty]').val()
     count = @$el.find('select.count').val()
+    article = @$('input[name=article_number]').val()
 
     saveEquipment = 
       title: title
@@ -40,6 +41,7 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
       code: code
       warranty: warranty
       count: count
+      article_number: article
 
     @model.save(saveEquipment,
       success: =>

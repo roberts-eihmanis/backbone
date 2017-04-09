@@ -14,6 +14,7 @@ class Inventory.Views.WorkerForm extends Backbone.View
     @$el.html html
     @renderOrgUnits()
     @renderPositions()
+    @$('.start_at').datepicker(dateFormat: "dd.mm.yy")
     @
 
   getUnits: ->
@@ -71,6 +72,7 @@ class Inventory.Views.WorkerForm extends Backbone.View
     newHip = @$el.find('select.hip').val()
     newHeight = @$el.find('select.height').val()
     newFoot = @$el.find('select.foot').val()
+    startAt = @$el.find('input[name=start_at]').val()
 
     saveWorker = 
       first_name: firstName
@@ -83,6 +85,7 @@ class Inventory.Views.WorkerForm extends Backbone.View
       hip_size: newHip
       height: newHeight
       foot_size: newFoot
+      start_at: startAt
 
     @model.save(saveWorker,
       success: =>

@@ -19,6 +19,9 @@
       %label.control-label.col-xs-2= "Amats"
       %select.form-control.position{ style: "width:60%;", name: "positiion" }
     %div.form-group
+      %label.control-label.col-xs-2= "Strāda No"
+      %input.form-control.start_at{ type: "text", name: "start_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+    %div.form-group
       %label.control-label.col-xs-2= "Krūšu apkārtmērs"
       %select.form-control.breast{ style: "width:60%;", name: "breast" }
         - for i in [70..150]

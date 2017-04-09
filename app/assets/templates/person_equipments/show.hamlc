@@ -1,5 +1,5 @@
 %td= @id
-%td= @issuer_date
+%td= moment(@issuer_date).format('DD.MM.YYYY') if @issuer_date
 %td= "#{@worker.first_name} #{@worker.last_name}"
 %td= @worker.position
 %td= @worker.unit

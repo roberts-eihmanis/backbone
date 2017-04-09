@@ -78,6 +78,19 @@ before_action :set_worker, only: [:show, :edit, :update, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:first_name, :last_name, :gender, :unit, :position, :breast_size, :waist_size, :hip_size, :height, :foot_size, :start_at, :end_at)
+      params.require(:worker).permit(
+        :first_name, 
+        :last_name, 
+        :gender, 
+        :unit, 
+        :position, 
+        :breast_size, 
+        :waist_size, 
+        :hip_size, 
+        :height, 
+        :foot_size, 
+        :start_at, 
+        :end_at
+      )
     end
 end

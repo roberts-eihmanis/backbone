@@ -63,8 +63,14 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
         @$body.html('Ups')
 
   order: ->
-    orderView = new Inventory.Views.PersonEquipmentsOrder
-    @$body.html(orderView.render().el)
+    inventoryWorkers = new Inventory.Collections.Workers
+    orderEquipment = new Inventory.Collections.PersonEquipments
+    inventoryWorkers.fetch
+      success: =>
+        orderEquipment.fetch
+          success: =>
+            orderView = new Inventory.Views.PersonEquipmentsOrder(collection: [inventoryWorkers, orderEquipment])
+            @$body.html(orderView.render().el)
 
   archive: ->
     archiveView = new Inventory.Views.PersonEquipmentsArchive
