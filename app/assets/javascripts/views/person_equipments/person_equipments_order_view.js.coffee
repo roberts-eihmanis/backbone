@@ -4,7 +4,6 @@ class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
   events:
     'click .cancel' : 'cancel'
     'change select.org_unit' : 'renderWorkers'
-    'change select.equipment_category' : 'equipmentAutocomplete'
 
   templateAttributes: ->
 
@@ -46,3 +45,6 @@ class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
       option = $("<option>", value: worker.id, text: "#{worker.first_name} #{worker.last_name}")
       element.append option
     false
+
+  equipmentAutocomplete: ->
+

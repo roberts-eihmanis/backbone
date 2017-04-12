@@ -1,9 +1,18 @@
-%h1= "Atskaites"
-%class="navbar navbar-default"
-  %class="container-fluid"
-    %class="navbar-header"
-      %a.navbar-brand= "WebSiteName"
-    %ul.nav.navbar-nav
-      %li{ href: "#"}= "Pēc darbinieka"
-      %li{ href: "#"}= "Pēc IAL"
-      %li{ href: "#"}= "Pēc Perioda"
+%nav.navbar.navbar-default.navbar-fixed-top{ style: "margin-left: 200px;"}
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{ "aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button" }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#reports"} Atskaites
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "#"}
+            Pēc Darbinieka
+        %li
+          %a{:href => "#"} Pēc perioda
+        %li
+          %a{:href => "#"} Pēc IAL
