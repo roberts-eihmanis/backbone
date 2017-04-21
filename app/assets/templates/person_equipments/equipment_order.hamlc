@@ -1,0 +1,8 @@
+%td= @id
+%td= "#{@worker.first_name} #{@worker.last_name}"
+%td= @person_equipment.title
+%td= @count
+%td
+  %a.delete_equipment_order{ href: "#"}
+    %i.fa.fa-times
+

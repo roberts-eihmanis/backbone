@@ -37,6 +37,9 @@
       %select.form-control.count{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
         - for i in [1..30]
           %option{ value: if @count then @count else "#{i}" }= i
+    %div.form-group
+      %label.control-label.col-xs-2= "Šūts apģērbs"
+      %input{ type: 'checkbox', value: @special_order }
 
     %button.btn.btn-primary.save= "Saglabāt"
     %button.btn.btn-primary.cancel= "Atcelt"

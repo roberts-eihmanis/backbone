@@ -13,15 +13,15 @@
               %a{:href => root_path} Home
             %li
               %a{:href => "/#workers"} Darbinieki
-            - if current_user.admin?
-              %li
-                %a{:href => "/admin/users"} Administrātora Panelis
             %li
               %a{:href => "/#person_equipments"} IAL
             %li
-              %a{:href => "/#person_equipments/archive"} IAL arhīvs
+              %a{:href => "/#person_equipments/archive"} IAL katalogs
             %li
               %a{:href => "/#reports" } Atskaites
+            - if current_user.admin?
+              %li
+                %a{:href => "/admin/users"} Administratora Panelis
             %li
               = link_to "Iziet", destroy_user_session_path, :method => :delete
         #page-content-wrapper

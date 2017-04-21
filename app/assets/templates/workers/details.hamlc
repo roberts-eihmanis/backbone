@@ -15,6 +15,9 @@
         %td= "Amats"
         %td= @position
       %tr
+        %td= "Strāda No"
+        %td= @start_at
+      %tr
         %td= "Krūšu apkārtmērs"
         %td= @breast_size
       %tr

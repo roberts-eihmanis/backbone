@@ -5,7 +5,7 @@ window.Inventory =
   Routers: {}
   config: {
     positions: {
-      "Administrācija": ["Golfa Laukuma admininstrātors", "Valdes Loceklis", "Prokūrists", "Golfa Kompleksa Pārvaldnieks"], 
+      "Administrācija": ["Golfa Laukuma admininstrators", "Valdes Loceklis", "Prokūrists", "Golfa Kompleksa Pārvaldnieks"], 
       "Uzturēšanas nodaļa": ["Dārzkopības tehniķis", "Golfa Laukuma uzturēšanas nodaļas speciālists", "Golfa Laukuma laistīšanas sistēmas speciālists"], 
       "Apkopes Daļa": ["Golfa Laukuma tehniskais speciālists", "Golfa Laukuma mehāniķis"] }
     userRoles: ["admin", "user", "worker"]

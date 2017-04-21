@@ -27,6 +27,7 @@ gem 'underscore-rails'
 gem 'haml'
 gem 'simple_form'
 gem 'momentjs-rails'
+gem 'font-awesome-rails'
 
 # database
 gem 'mysql2', '~> 0.3.18'
