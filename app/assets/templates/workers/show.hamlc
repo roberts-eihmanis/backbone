@@ -3,7 +3,7 @@
 %td= @last_name
 %td= @unit
 %td= @position
-%td= @start_at
+%td= moment(@start_at).format('DD.MM.YYYY') if @start_at
 %td= @active
 %td
   %button.btn.btn-primary.delete_worker= "Delete"
