@@ -17,6 +17,12 @@ class PersonEquipmentsController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @person_equipment }
+      format.pdf do
+        pdf = OrderPdf.new(@person_equipment, view_context)
+        send_data pdf.render, filename: "order_#{@order.order_number}.pdf",
+          type: "application/pdf",
+          disposition: "inline"
+      end
     end
   end
 
@@ -78,6 +84,6 @@ class PersonEquipmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_equipment_params
       params.require(:person_equipment).permit(:title, :size, :manafacturer, :manafacturer_country,
-        :price, :code, :count, :worker_id, :issuer_id, :warranty, :category, :article_number, :issuer_date)
+        :price, :code, :count, :worker_id, :issuer_id, :warranty, :category, :article_number, :issuer_date, :purchased_date)
     end
 end

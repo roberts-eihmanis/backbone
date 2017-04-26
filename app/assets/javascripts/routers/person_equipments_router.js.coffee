@@ -9,6 +9,7 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
     
   initialize: ->
     @equipments = new Inventory.Collections.Equipments
+    @equipmentCatalogue = new Inventory.Collections.EquipmentsCatalogue
     @personEquipments = new Inventory.Collections.PersonEquipments
     @users = new Inventory.Collections.Users
     @workers = new Inventory.Collections.Workers
@@ -32,9 +33,8 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
   new: ->
     model = new Inventory.Models.PersonEquipment
     newForm = new Inventory.Views.PersonEquipmentForm(model: model)
-    newForm.render()
-    
     @$body.html(newForm.el)
+    newForm.render()
 
   edit: (id) ->
     personEquipment = new Inventory.Models.PersonEquipment(id: id)
@@ -72,11 +72,14 @@ class Inventory.Routers.PersonEquipments extends Backbone.Router
           success: =>
             equipmentOrders.fetch
               success: =>
-                eqOrd = new Inventory.Collections.EquipmentOrders(equipmentOrders.where(order_id: null))
                 orderView = new Inventory.Views.PersonEquipmentsOrder(
-                  collection: [inventoryWorkers, orderEquipment, eqOrd])
+                  model: new Inventory.Models.Order(), 
+                  collection: [inventoryWorkers, orderEquipment, equipmentOrders])
                 @$body.html(orderView.render().el)
 
   archive: ->
-    archiveView = new Inventory.Views.PersonEquipmentsArchive
-    @$body.html(archiveView.render().el)
+    @equipmentCatalogue.fetch
+      success: =>
+        archiveView = new Inventory.Views.ArchiveIndexView(collection: @equipmentCatalogue)
+        @$body.html(archiveView.render().el)
+      

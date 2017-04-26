@@ -11,6 +11,7 @@ class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
     @listenTo @collection[2], 'add', @render
 
   templateAttributes: ->
+    @model.toJSON()
 
   render: ->
     @$el.html(@template(@templateAttributes()))
@@ -21,8 +22,9 @@ class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
     @
 
   renderEquipmentOrders: ->
+    @unorderedEquipments = @collection[2].where(order_id: null)
     @$('.equipment_orders').empty()
-    @collection[2].each (equipmentOrder) =>
+    @unorderedEquipments.forEach (equipmentOrder) =>
       equipmentOrderView = new Inventory.Views.EquipmentOrdersView(model: equipmentOrder, collection: @collection)
       @$('.equipment_orders').append(equipmentOrderView.render().el)
     @
@@ -86,7 +88,23 @@ class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
         alert "Nevarēja saglabāt"
     )
 
-  makeOrder: ->
-    model = new Inventory.Models.Order
+  makeOrder: (e) ->
+    e.preventDefault()
+    date = new Date()
+    newOrder = 
+      created_at: date
+      status: "ordered"
+    @model.save(newOrder,
+      success: (model) =>
+        @updateEquipments(model)
+      error: ->
+        alert "Nekas nenotika"
+      wait: true
+    )
+    @
 
+  updateEquipments: (model) ->
+    @unorderedEquipments.forEach (equipment) ->
+      equipment.save(order_id: model.id)
+    Backbone.history.navigate('#home', trigger: true)
 

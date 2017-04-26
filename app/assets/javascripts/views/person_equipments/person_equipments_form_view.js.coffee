@@ -1,16 +1,16 @@
 class Inventory.Views.PersonEquipmentForm extends Backbone.View
   template: JST['person_equipments/form']
 
-  events: {
+  events: 
     'click .save' : 'save'
     'click .cancel': 'cancel'
-  }
 
   templateAttributes: ->
     @model.toJSON()
 
   render: ->
     @$el.html(@template(@templateAttributes()))
+    @$('.purchased_at').datepicker(dateFormat: "dd.mm.yy")
     @
 
   cancel: (e) ->
@@ -26,6 +26,7 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
     size = @$el.find('input[name=size]').val()
     category = @$el.find('select.category').val()
     price = @$el.find('input[name=price]').val()
+    purchasedAt = @$el.find('input[name=purchased_at]').val()
     code = @$el.find('input[name=code]').val()
     warranty = @$el.find('input[name=warranty]').val()
     count = @$el.find('select.count').val()
@@ -42,6 +43,7 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
       warranty: warranty
       count: count
       article_number: article
+      purchased_at: purchasedAt
 
     @model.save(saveEquipment,
       success: =>

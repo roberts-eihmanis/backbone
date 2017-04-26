@@ -88,7 +88,7 @@ class Inventory.Views.WorkerForm extends Backbone.View
       start_at: startAt
 
     @model.save(saveWorker,
-      success: =>
+      success: (model) =>
         @$el.empty()
         Backbone.history.navigate('#workers', trigger: true)
       error: (model, error) ->

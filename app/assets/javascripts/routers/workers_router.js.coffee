@@ -18,7 +18,6 @@ class Inventory.Routers.Workers extends Backbone.Router
         @$body.html('Ups')
 
   new: ->
-    console.log 'New'
     newForm = new Inventory.Views.WorkerForm(model: new Inventory.Models.Worker())
     newForm.render()
     @$body.html(newForm.el)

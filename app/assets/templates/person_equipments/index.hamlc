@@ -1,6 +1,6 @@
 %a.btn.btn-info{ href: "#person_equipments/new" }= "Jauns IAL"
 %a.btn.btn-info{ href: "#person_equipments/issue" }= "Izsniegt IAL"
-%a.btn.btn-info{ href: "#person_equipments/order"}= "Pasūtīt IAL"
+%a.btn.btn-info{ href: "#person_equipments/order" }= "Jauns Pasūtijums"
 %h1= "Zurnals"
 .content_container
   %table.table.table-hover.table-striped

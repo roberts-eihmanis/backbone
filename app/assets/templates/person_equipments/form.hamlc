@@ -27,6 +27,9 @@
       %label.control-label.col-xs-2= "Cena"
       %input.col-xs-20{ type: "value", value: @price, name: "price", placeholder: "Cena", class: "form-control", style: "width: 60%;" }
     %div.form-group
+      %label.control-label.col-xs-2= "Pirkšanas datums"
+      %input.form-control.purchased_at{ type: "text", name: "purchased_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+    %div.form-group
       %label.control-label.col-xs-2= "Kods"
       %input.col-xs-20{ type: "text", value: @code, name: "code", placeholder: "Kods", class: "form-control", style: "width: 60%;" }
     %div.form-group

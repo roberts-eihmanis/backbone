@@ -12,17 +12,19 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap
  *= require simple-sidebar
  *= require font-awesome
 */
 @import "jquery.ui.all";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 
 body {
   font-family: helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  background-color: #D3D3D3;
 }
 div.nav-bar {
   font-size: 20px;

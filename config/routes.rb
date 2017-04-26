@@ -4,13 +4,17 @@ Rails.application.routes.draw do
   scope "/admin" do
     resources :users
   end
-  root 'welcome#index'
+  root :to => 'welcome#index'
 
   resources :tasks
   resources :workers
   resources :person_equipments
 
-  resources :equipments, only: [:index]
+  resources :equipments, only: [:index] do
+    collection do
+      get 'catalogue'
+    end
+  end
   resources :equipment_orders
   resources :orders
   

@@ -21,6 +21,9 @@ window.Inventory =
     @reportsRouter = new Inventory.Routers.Reports
 
     Backbone.history.start()
+    re = new RegExp(/([admin\/users\/a-z,0-9])/i)
+    unless location.hash or location.pathname != '/'
+      Backbone.history.navigate 'home', trigger: true
 
 $(document).ready ->
   Inventory.initialize()

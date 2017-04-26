@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421160602) do
+ActiveRecord::Schema.define(version: 20170425190016) do
 
   create_table "equipment_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "worker_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170421160602) do
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.datetime "created_at"
     t.text     "file",       limit: 65535
+    t.string   "status",                   default: "ordered"
   end
 
   create_table "person_equipments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
@@ -29,7 +30,6 @@ ActiveRecord::Schema.define(version: 20170421160602) do
     t.string   "size"
     t.string   "manafacturer"
     t.string   "manafacturer_country"
-    t.integer  "price"
     t.string   "code"
     t.integer  "count"
     t.integer  "worker_id"
@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 20170421160602) do
     t.string   "category"
     t.string   "article_number"
     t.datetime "issuer_date"
-    t.boolean  "special_order",        default: false
+    t.boolean  "special_order",                       default: false
+    t.decimal  "price",                precision: 10, default: 0
+    t.datetime "purchased_at"
   end
 
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|

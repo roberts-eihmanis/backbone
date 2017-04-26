@@ -1,5 +1,5 @@
 class WorkersController < ApplicationController
-before_action :set_worker, only: [:show, :edit, :update, :destroy]
+  before_action :set_worker, only: [:show, :edit, :update, :destroy]
 
   # GET /workers
   # GET /workers.json
