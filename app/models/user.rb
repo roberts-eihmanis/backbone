@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
 
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name, :encrypted_password, :role, :email
   has_many :person_equipments
 
 
