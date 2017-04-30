@@ -92,6 +92,6 @@ class Inventory.Views.WorkerForm extends Backbone.View
         @$el.empty()
         Backbone.history.navigate('#workers', trigger: true)
       error: (model, error) ->
-        console.log "#{model} Error: #{error}"
+        alert "Jūs ievadījāt nepareizu vērtību"
     )
     @

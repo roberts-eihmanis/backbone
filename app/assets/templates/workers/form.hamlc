@@ -1,33 +1,33 @@
 %h2= "Jauns Darbinieks"
 .content_container
   %form.form-horizontal
-    %div.form-group.first_name
+    %div.form-group.first_name.required
       %label.control-label.col-xs-2= "Vārds"
       %input.col-xs-20{ type: "text", value: @first_name, name: "first_name", placeholder: "Vārds", class: "form-control", style: "width: 60%;" }
-    %div.form-group.last_name
+    %div.form-group.last_name.required
       %label.control-label.col-xs-2= "Uzvārds"
       %input{ type: "text", value: @last_name, name: "last_name", placeholder: "Uzvārds", class: "form-control", style: "width: 60%;" }
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "Dzimums"
       %select.form-control.gender{ style: "width:60%;" }
         %option{ value: "Virietis" }= "Vīrietis"
         %option{ value: "Sieviete" }= "Sieviete"
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "Struktūrvienība"
       %select.form-control.org_unit{ style: "width:60%;", name: "positiion" }
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "Amats"
       %select.form-control.position{ style: "width:60%;", name: "positiion" }
-    %div.form-group
-      %label.control-label.col-xs-2= "Strāda No"
+    %div.form-group.required
+      %label.control-label.col-xs-2= "Strāda no"
       %input.form-control.start_at{ type: "text", name: "start_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
     %div.form-group
-      %label.control-label.col-xs-2= "Krūšu apkārtmērs"
+      %label.control-label.col-xs-2= "Krūšu apkārtmērs cm"
       %select.form-control.breast{ style: "width:60%;", name: "breast" }
         - for i in [70..150]
           %option{ value: "#{i}" }= "#{i}"
     %div.form-group
-      %label.control-label.col-xs-2= "Vidukļa apkārtmērs"
+      %label.control-label.col-xs-2= "Vidukļa apkārtmērs cm"
       %select.form-control.waist{ style: "width:60%;" name: "waist" }
         - for i in [60..150]
           %option{ value: "#{i}" }= "#{i}"
@@ -37,12 +37,12 @@
         - for i in [60..150]
           %option{ value: "#{i}" }= "#{i}"
     %div.form-group
-      %label.control-label.col-xs-2= "Garums"
+      %label.control-label.col-xs-2= "Augums"
       %select.form-control.height{ style: "width:60%;" }
         - for i in [145..220]
           %option{ value: "#{i}" }= "#{i}"
     %div.form-group
-      %label.control-label.col-xs-2= "Kājas izmērs"
+      %label.control-label.col-xs-2= "Apavu izmērs"
       %select.form-control.foot{ style: "width:60%;" }
         - for i in [34..49]
           %option{ value: "#{i}" }= "#{i}"

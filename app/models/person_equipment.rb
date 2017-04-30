@@ -1,6 +1,11 @@
 class PersonEquipment < ApplicationRecord
+  # RelationShips
   belongs_to :worker, required: false
   belongs_to :user, foreign_key: 'issuer_id', required: false
   has_many :equipment_orders
-  validates_presence_of :title, :price, :count, :category, :article_number
+
+  # Validations
+  validates_presence_of :title, :price, :count, :category, :purchased_at
+  validates :price, :numericality => { :greater_than_or_equal_to => 0 }
+
 end

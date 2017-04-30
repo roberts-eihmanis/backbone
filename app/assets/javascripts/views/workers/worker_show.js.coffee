@@ -16,6 +16,7 @@ class Inventory.Views.WorkerShow extends Backbone.View
 
   delete: =>
     @model.unset("errors", {silent: true})
+    alert "Vai tiešām vēlaties dzēst šo darbinieku?"
     @model.destroy(
       success: =>
         @$el.empty()

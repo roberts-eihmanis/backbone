@@ -1,0 +1,69 @@
+%h1= "Darbinieka Skats"
+.content_container
+  %table.table
+    %tbody
+      %tr
+        %td= "Vārds"
+        %td
+          %input{ type: "text", value: @first_name, name: "first_name", placeholder: "Vārds", class: "form-control", style: "width: 30%;" }
+      %tr
+        %td= "Uzvārds"
+        %td
+          %input{ type: "text", value: @last_name, name: "last_name", placeholder: "Uzvārds", class: "form-control", style: "width: 30%;" }
+      %tr
+        %td= "Dzimums"
+        %td
+          %select.form-control.gender{ style: "width:60%;" }
+            %option= @gender
+            %option{ value: "Virietis" }= "Vīrietis"
+            %option{ value: "Sieviete" }= "Sieviete"
+      %tr
+        %td= "Struktūrvienība"
+        %td
+          %select.form-control.org_unit{ style: "width:60%;", name: "unit" }
+            %option= @unit
+      %tr
+        %td= "Amats"
+        %td
+          %select.form-control.position{ style: "width:60%;", name: "position" }
+            %option= @position
+      %tr
+        %td= "Strāda no"
+        %td
+          %input.form-control.start_at{ type: "text", name: "start_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+      %tr
+        %td= "Atbrīvots no darba"
+        %td
+          %input.form-control.end_at{ type: "text", name: "end_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+      %tr
+        %td= "Krūšu apkārtmērs cm"
+        %td
+          %select.form-control.breast{ style: "width:60%;", name: "breast" }
+            - for i in [70..150]
+              %option{ value: "#{i}" }= "#{i}"
+      %tr
+        %td= "Vidukļa apkārtmērs cm"
+        %td
+          %select.form-control.waist{ style: "width:60%;" name: "waist" }
+            - for i in [60..150]
+              %option{ value: "#{i}" }= "#{i}"
+      %tr
+        %td= "Gurnu apkārtmērs cm"
+        %td
+          %select.form-control.hip{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
+            - for i in [60..150]
+              %option{ value: "#{i}" }= "#{i}"
+      %tr
+        %td= "Augums cm"
+        %td
+          %select.form-control.height{ style: "width:60%;" }
+            - for i in [145..220]
+              %option{ value: "#{i}" }= "#{i}"
+      %tr
+        %td= "Apavu izmērs EU"
+        %td
+          %select.form-control.foot{ style: "width:60%;" }
+            - for i in [34..49]
+              %option{ value: "#{i}" }= "#{i}"
+%a.btn.btn-info.save{ href: "#", role: "button" }= "Saglabāt"
+%a.btn.btn-info.back{ role: "button" }= "Atpakaļ"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425190016) do
+ActiveRecord::Schema.define(version: 20170430143958) do
 
   create_table "equipment_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "worker_id"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20170425190016) do
     t.string   "category"
     t.string   "article_number"
     t.datetime "issuer_date"
-    t.boolean  "special_order",                       default: false
-    t.decimal  "price",                precision: 10, default: 0
+    t.boolean  "special_order",                                default: false
+    t.decimal  "price",                precision: 6, scale: 2, default: "0.0"
     t.datetime "purchased_at"
   end
 

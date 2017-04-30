@@ -50,7 +50,7 @@ class Inventory.Views.PersonEquipmentForm extends Backbone.View
         @$el.empty()
         Backbone.history.navigate('#person_equipments', trigger: true)
       error: (model, error) ->
-        console.log "#{model} Error: #{error}"
+        alert "Jūs ievadījāt nepareizu vērtību"
     )
     @
 

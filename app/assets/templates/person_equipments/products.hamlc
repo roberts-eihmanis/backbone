@@ -1,6 +1,8 @@
 %td
   = @title
 %td
+  = @category
+%td
   = @manafacturer
 %td
   = @manafacturer_country

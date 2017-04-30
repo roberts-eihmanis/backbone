@@ -1,4 +1,4 @@
-%h1= "Darbinieka Skats"
+%h1= "Darbinieks #{@first_name} #{@last_name}"
 .content_container
   %table.table
     %tbody
@@ -12,25 +12,29 @@
         %td= "Dzimums"
         %td= @gender
       %tr
+        %td= "Struktūrvienība"
+        %td= @unit
+      %tr
         %td= "Amats"
         %td= @position
       %tr
         %td= "Strāda No"
-        %td= @start_at
+        %td= moment(@start_at).format('DD.MM.YYYY') if @start_at
       %tr
-        %td= "Krūšu apkārtmērs"
+        %td= "Krūšu apkārtmērs cm"
         %td= @breast_size
       %tr
-        %td= "Vidukļa apkārtmērs"
+        %td= "Vidukļa apkārtmērs cm"
         %td= @waist_size
       %tr
-        %td= "Gurnu apkārtmērs"
+        %td= "Gurnu apkārtmērs cm"
         %td= @hip_size
       %tr
-        %td= "Augums"
+        %td= "Augums cm"
         %td= @height
       %tr
-        %td= "Kājas izmērs"
+        %td= "Apavu izmērs EU"
         %td= @foot_size
+%a.btn.btn-info.edit_worker{ role: "button" }= "Rediģēt"
 %a.btn.btn-info.delete_worker{ href: "#", role: "button" }= "Dzēst"
 %a.btn.btn-info.back{ href: "#workers", role: "button" }= "Atpakaļ"

@@ -21,6 +21,7 @@
     %thead.table_head
       %tr
         %th= "Nosaukums"
+        %th= "Kategorija"
         %th= "Ražotājs"
         %th= "Ražotāja Valsts"
         %th= "Izmērs"
