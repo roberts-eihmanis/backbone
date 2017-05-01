@@ -11,7 +11,7 @@
       %ul.nav.navbar-nav
         %li.active
           %a{:href => "#"}
-            Pēc Darbinieka
+            Pēc darbinieka
         %li
           %a{:href => "#"} Pēc perioda
         %li

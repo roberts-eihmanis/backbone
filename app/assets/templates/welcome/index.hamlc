@@ -1,23 +1,23 @@
-%h1= "Esiet Sveicināti Individuālo aizsārdzību līdzēkļu uzksaites sistēmā"
+%h1= "Individuālo aizsardzības līdzekļu uzskaites sistēma"
 .content_container
-  %h3= "Aktīvie Pasūtijumi"
+  %h3= "Aktīvie pasūtījumi"
   %table.table.table-hover.table-striped
     %thead.table_head
       %tr
         %th= "Nr. p.k."
         %th= "Datums"
-        %th= "Paūtijuma Nr."
+        %th= "Paūtījuma nr."
         %th= "Saite"
     %tbody.orders
 
 .content_container
-  %h3= " Beidzamie individuālie aizsardzības līdzekļi"
+  %h3= "Pēdējie individuālie aizsardzības līdzekļi"
   %table.table.table-hover.table-striped
     %thead.table_head
       %tr
         %th= "Nosaukums"
         %th= "Ražotājs"
-        %th= "Ražotāja Valsts"
+        %th= "Ražotāja valsts"
         %th= "Izmērs"
         %th= "Kods"
         %th= "Cena"

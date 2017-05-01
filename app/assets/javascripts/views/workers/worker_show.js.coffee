@@ -4,8 +4,7 @@ class Inventory.Views.WorkerShow extends Backbone.View
   className: 'row_worker'
 
   events:
-    'click .delete_worker' : 'delete'
-    'click td'             : 'open'
+    'click td' : 'open'
 
   templateAttributes: ->
     @model.toJSON()
@@ -13,17 +12,6 @@ class Inventory.Views.WorkerShow extends Backbone.View
   render: ->
     @$el.html(@template(@templateAttributes()))
     @
-
-  delete: =>
-    @model.unset("errors", {silent: true})
-    alert "Vai tiešām vēlaties dzēst šo darbinieku?"
-    @model.destroy(
-      success: =>
-        @$el.empty()
-      error: ->
-        console.log 'nok '
-    )
-    false
 
   open: ->
     Backbone.history.navigate("#workers/show/#{@model.id}", trigger: true)

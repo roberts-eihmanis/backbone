@@ -21,19 +21,19 @@
         %td= "Strāda No"
         %td= moment(@start_at).format('DD.MM.YYYY') if @start_at
       %tr
-        %td= "Krūšu apkārtmērs cm"
+        %td= "Krūšu apkārtmērs (cm)"
         %td= @breast_size
       %tr
-        %td= "Vidukļa apkārtmērs cm"
+        %td= "Vidukļa apkārtmērs (cm)"
         %td= @waist_size
       %tr
-        %td= "Gurnu apkārtmērs cm"
+        %td= "Gurnu apkārtmērs (cm)"
         %td= @hip_size
       %tr
-        %td= "Augums cm"
+        %td= "Augums (cm)"
         %td= @height
       %tr
-        %td= "Apavu izmērs EU"
+        %td= "Apavu izmērs (EU)"
         %td= @foot_size
 %a.btn.btn-info.edit_worker{ role: "button" }= "Rediģēt"
 %a.btn.btn-info.delete_worker{ href: "#", role: "button" }= "Dzēst"

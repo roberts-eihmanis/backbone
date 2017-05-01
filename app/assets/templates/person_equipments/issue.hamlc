@@ -8,7 +8,7 @@
       %label.control-label.col-xs-2= "Darbinieks"
       %select.form-control.workers{ style: "width:60%;" }
     %div.form-group
-      %label.control-label.col-xs-2= "IAL Kategorija"
+      %label.control-label.col-xs-2= "IAL kategorija"
       %select.col-xs-20.equipment_category{ placeholder: "IAL", class: "form-control", style: "width: 60%;" }
         %option= "Visi"
         - for category in Inventory.config.equipmentCategories

@@ -11,7 +11,7 @@
           %option{ value: "#{category}" }= category
     %div.form-group.required
       %label.control-label.col-xs-2= "Nosaukums"
-      %input.col-xs-20{ type: "text", value: @title, name: "title", placeholder: "Ekipējuma nosaukums", class: "form-control", style: "width: 60%;" }
+      %input.col-xs-20{ type: "text", value: @title, name: "title", placeholder: "IAL nosaukums", class: "form-control", style: "width: 60%;" }
     %div.form-group
       %label.control-label.col-xs-2= "Ražotājs"
       %input{ type: "text", value: @manafacturer, name: "manafacturer", placeholder: "Ražotājs", class: "form-control", style: "width: 60%;" }
@@ -24,7 +24,7 @@
       %label.control-label.col-xs-2= "Izmērs"
       %input.col-xs-20{ type: "text", value: @size, name: "size", placeholder: "Izmērs", class: "form-control", style: "width: 60%;" }
     %div.form-group.required
-      %label.control-label.col-xs-2= "Cena"
+      %label.control-label.col-xs-2= "Cena (EUR)"
       %input.col-xs-20{ type: "value", value: @price, name: "price", placeholder: "Cena", class: "form-control", style: "width: 60%;" }
     %div.form-group.required
       %label.control-label.col-xs-2= "Pirkšanas datums"
@@ -33,8 +33,8 @@
       %label.control-label.col-xs-2= "Kods"
       %input.col-xs-20{ type: "text", value: @code, name: "code", placeholder: "Kods", class: "form-control", style: "width: 60%;" }
     %div.form-group
-      %label.control-label.col-xs-2= "Garantija"
-      %input.col-xs-20{ type: "text", value: @code, name: "warranty", placeholder: "Garantija", class: "form-control", style: "width: 60%;" }
+      %label.control-label.col-xs-2= "Lietošanas termiņš"
+      %input.col-xs-20{ type: "text", value: @code, name: "warranty", placeholder: "Lietošanas termiņš", class: "form-control", style: "width: 60%;" }
     %div.form-group.required
       %label.control-label.col-xs-2= "Skaits"
       %select.form-control.count{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }

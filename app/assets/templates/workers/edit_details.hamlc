@@ -36,31 +36,31 @@
         %td
           %input.form-control.end_at{ type: "text", name: "end_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
       %tr
-        %td= "Krūšu apkārtmērs cm"
+        %td= "Krūšu apkārtmērs (cm)"
         %td
           %select.form-control.breast{ style: "width:60%;", name: "breast" }
             - for i in [70..150]
               %option{ value: "#{i}" }= "#{i}"
       %tr
-        %td= "Vidukļa apkārtmērs cm"
+        %td= "Vidukļa apkārtmērs (cm)"
         %td
           %select.form-control.waist{ style: "width:60%;" name: "waist" }
             - for i in [60..150]
               %option{ value: "#{i}" }= "#{i}"
       %tr
-        %td= "Gurnu apkārtmērs cm"
+        %td= "Gurnu apkārtmērs (cm)"
         %td
           %select.form-control.hip{ style: "width:60%; max-height: 200px; overflow-y: auto; overflow-x: hidden;" }
             - for i in [60..150]
               %option{ value: "#{i}" }= "#{i}"
       %tr
-        %td= "Augums cm"
+        %td= "Augums (cm)"
         %td
           %select.form-control.height{ style: "width:60%;" }
             - for i in [145..220]
               %option{ value: "#{i}" }= "#{i}"
       %tr
-        %td= "Apavu izmērs EU"
+        %td= "Apavu izmērs (EU)"
         %td
           %select.form-control.foot{ style: "width:60%;" }
             - for i in [34..49]

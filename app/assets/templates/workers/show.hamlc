@@ -4,5 +4,3 @@
 %td= @unit
 %td= @position
 %td= moment(@start_at).format('DD.MM.YYYY') if @start_at
-%td
-  %button.btn.btn-primary.delete_worker= "Dzēst"

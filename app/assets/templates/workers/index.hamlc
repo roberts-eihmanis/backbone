@@ -6,8 +6,8 @@
   %div.col-lg-4.pull-right
     %div.input-group{ style: 'padding-top:25px;'}
       %span.input-group-btn
-        %button.btn.btn-secondary{ type: 'button' }= "Search"
-      %input.form-control{ type: 'text', placeholder: 'Search'}
+        %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
+      %input.form-control.search{ type: 'text', placeholder: 'Meklēt'}
 %table.table.table-hover.table-striped
   %thead.table_head
     %tr
@@ -15,6 +15,6 @@
       %th= "Vārds"
       %th= "Uzvārds"
       %th= "Struktūrvienība"
-      %th= "Darba Amats"
+      %th= "Amats"
       %th= "Strādā no"
   %tbody.workers

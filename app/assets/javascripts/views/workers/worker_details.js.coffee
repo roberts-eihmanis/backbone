@@ -7,6 +7,7 @@ class Inventory.Views.Details extends Backbone.View
     'click .back' : 'back'
     'change select.org_unit' : 'renderPositions'
     'click .save' : 'save'
+    'click .delete_worker' : 'delete'
 
   templateAttributes: ->
     @model.toJSON()
@@ -99,3 +100,15 @@ class Inventory.Views.Details extends Backbone.View
 
   back: ->
     @$el.html(@template(@templateAttributes()))
+
+  delete: (e) =>
+    e.preventDefault()
+    @model.unset("errors", {silent: true})
+    if confirm "Vai tiešām vēlaties dzēst šo darbinieku?"
+      @model.destroy(
+        success: =>
+          Backbone.history.navigate('#workers', trigger: true)
+        error: ->
+          console.log 'nok '
+      )
+      false

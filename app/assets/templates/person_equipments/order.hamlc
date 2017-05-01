@@ -1,7 +1,7 @@
 %h1= "Pasūtīt IAL"
 .content_container
   %div.form-group
-    %label.control-label.col-xs-2= "Departaments"
+    %label.control-label.col-xs-2= "Struktūrvienība"
     %select.form-control.org_unit{ style: "width:20%;" }
   %div.form-group
     %label.control-label.col-xs-2= "Darbinieks"
@@ -25,7 +25,7 @@
     %thead
       %tr
         %th= "Nr.p.k"
-        %th= "Vārds, Uzvārds"
+        %th= "Vārds, uzvārds"
         %th= "IAL nosaukums"
         %th= "Skaits"
     %tbody.equipment_orders
