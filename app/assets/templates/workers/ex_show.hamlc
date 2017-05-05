@@ -1,0 +1,9 @@
+%td= @id
+%td= @first_name
+%td= @last_name
+%td= @unit
+%td= @position
+%td= moment(@start_at).format('DD.MM.YYYY') if @start_at
+%td= moment(@end_at).format('DD.MM.YYYY') if @end_at
+%td
+  %button.btn.btn-primary.recover= "Atjaunot Darbā"

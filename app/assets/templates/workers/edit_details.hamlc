@@ -30,11 +30,11 @@
       %tr
         %td= "Strāda no"
         %td
-          %input.form-control.start_at{ type: "text", name: "start_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+          %input.form-control.start_at{ type: "text", name: "start_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;", value: moment(@start_at).format('DD.MM.YYYY') if @start_at }
       %tr
         %td= "Atbrīvots no darba"
         %td
-          %input.form-control.end_at{ type: "text", name: "end_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+          %input.form-control.end_at{ type: "text", name: "end_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;", value: moment(@end_at).format('DD.MM.YYYY') if @end_at }
       %tr
         %td= "Krūšu apkārtmērs (cm)"
         %td

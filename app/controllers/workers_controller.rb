@@ -90,7 +90,8 @@ class WorkersController < ApplicationController
         :height, 
         :foot_size, 
         :start_at, 
-        :end_at
+        :end_at,
+        :active
       )
     end
 end

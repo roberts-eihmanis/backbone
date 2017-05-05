@@ -1,0 +1,11 @@
+%td
+  = @id
+%td
+  = moment(@created_at).format('DD.MM.YYYY')
+%td
+  - if @status == 'ordered'
+    = "Pasūtīts"
+  - else
+    = "Piegādāts"
+%td
+  = ""

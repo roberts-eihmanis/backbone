@@ -77,7 +77,7 @@ class Inventory.Views.PersonEquipmentIssue extends Backbone.View
     e.preventDefault()
     size = @$('select.size').val()
     title = @$('input.equipment').val()
-    id = @collection[2].where(size: size, title: title)[0].toJSON().id
+    id = @collection[2].where(worker_id: null, size: size, title: title)[0].toJSON().id
     model = new Inventory.Models.PersonEquipment(id: id)
     worker = @$('select.workers').val()
     user = @$('select.users').val()

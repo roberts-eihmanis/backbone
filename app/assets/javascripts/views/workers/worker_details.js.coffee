@@ -69,6 +69,12 @@ class Inventory.Views.Details extends Backbone.View
     newHeight = @$el.find('select.height').val()
     newFoot = @$el.find('select.foot').val()
     startAt = @$el.find('input[name=start_at]').val()
+    endAt = @$el.find('input[name=end_at]').val()
+
+    if endAt == ""
+      active = true
+    else
+      active = false
 
     saveWorker = 
       first_name: firstName
@@ -82,15 +88,23 @@ class Inventory.Views.Details extends Backbone.View
       height: newHeight
       foot_size: newFoot
       start_at: startAt
+      end_at: endAt
+      active: active
 
-    @model.save(saveWorker,
-      success: (model) =>
-        @$el.empty()
-        Backbone.history.navigate('#workers', trigger: true)
-      error: (model, error) ->
-        alert "Jūs ievadījāt nepareizu vērtību"
-    )
-    @
+    end = moment(endAt, 'DD.MM.YYYY')
+    start = moment(startAt, 'DD.MM.YYYY')
+    if end < start
+      $('input[name=end_at]').addClass('error')
+      alert "Datums ko ievadījāt ir par mazu"
+    else
+      @model.save(saveWorker,
+        success: (model) =>
+          @$el.empty()
+          Backbone.history.navigate('#workers', trigger: true)
+        error: (model, error) ->
+          alert "Jūs ievadījāt nepareizu vērtību"
+      )
+      @
 
   edit: ->
     @$el.html(@templateEdit(@templateAttributes()))

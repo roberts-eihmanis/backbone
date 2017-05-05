@@ -1,22 +1,23 @@
 %h1= "Arhīvs"
 .content_container
   %h2= "Pasūtījumu vēture"
-  %div.form-group
-    %label.control-label.col-xs-2= "Datums no:"
-    %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 20%;" }
-  %div.form-group
-    %label.control-label.col-xs-2= "Datums līdz:"
-    %input.col-xs-20.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 20%;" }
-  %div.form-group
+  %form.form-inline
+    .form-group
+      %label= "Datums no:"
+      %input.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control" }
+    .form-group
+      %label= "Datums līdz:"
+      %input.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control" }
     %button.btn.btn-primary.save= "Atlasīt"
-  %table.table.table-hover.table-striped{ style: "margin-top:10px;"}
-    %thead
-      %tr
-        %th= "Nr.p.k"
-        %th= "Datums"
-        %th= "Pasūtījuma Nr."
-        %th= "Saite"
-    %tbody.orders
+  %div.table_container{ style: "height: 250px; overflow: auto;"}
+    %table.table.table-hover.table-striped{ style: "margin-top:10px;"}
+      %thead
+        %tr
+          %th= "Pasūtījuma Nr."
+          %th= "Datums"
+          %th= "Pasūtijuma statuss"
+          %th= "Saite"
+      %tbody.orders
 
 %h2= "IAL Kuri nav noliktavā/Katalogs"
 .content_container
@@ -28,8 +29,9 @@
   %table.table.table-hover.table-striped{ style: "margin-top:10px;"}
     %thead
       %tr
-        %th= "Nr.p.k"
         %th= "IAL Nosaukums"
-        %th= "Iegādes datums"
+        %th= "Kategorija"
+        %th= "Ražotājs"
+        %th= "Izmērs"
         %th= "Cena"
     %tbody.person_equipments

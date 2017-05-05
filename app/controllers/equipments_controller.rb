@@ -12,13 +12,13 @@ class EquipmentsController < ApplicationController
   end
 
   def catalogue
-    @equipments = PersonEquipment.
-      select(:title, :size, :manafacturer, :manafacturer_country, :price, :code, 'SUM(count) AS count').
-      where.not(worker_id: nil).where(count: 0).
-      group('title', 'size', 'category', 'manafacturer', 'manafacturer_country', 'price', 'code', 'count')
+    @catalogue_equipments = PersonEquipment.
+      select(:title, :size, :category, :manafacturer, :price).
+      where.not(worker_id: nil).
+      group('title', 'size', 'category', 'manafacturer', 'price')
     respond_to do |format|
       format.html
-      format.json { render json: @equipments }
+      format.json { render json: @catalogue_equipments }
     end
   end
 end

@@ -1,10 +1,7 @@
-%a.btn.btn-primary.btn-lg{ href: '#workers/new', role: "button" }= "Jauns Darbinieks"
-%a.btn.btn-primary.btn-lg.ex_workers= "Bijušie Darbinieki"
-%a.btn.btn-primary.btn-lg.cur_workers= "Esošie Darbinieki"
-%div.current_workers
+%div.ex_container
   %div.row{ style: "margin-top: 10px;"}
     %div.col-lg-6
-      %h1= "Esošie Darbinieki"
+      %h1= "Bijušie Darbinieki"
     %div.col-lg-4.pull-right
       %div.input-group{ style: 'padding-top:25px;'}
         %span.input-group-btn
@@ -19,4 +16,5 @@
         %th= "Struktūrvienība"
         %th= "Amats"
         %th= "Strādā no"
-    %tbody.workers
+        %th= "Beidzis darbu"
+    %tbody.ex_workers_container

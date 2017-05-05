@@ -20,6 +20,10 @@
       %tr
         %td= "Strāda No"
         %td= moment(@start_at).format('DD.MM.YYYY') if @start_at
+      - if @end_at
+        %tr
+          %td= "Beidzis darbu"
+          %td= moment(@end_at).format('DD.MM.YYYY')
       %tr
         %td= "Krūšu apkārtmērs (cm)"
         %td= @breast_size
@@ -36,5 +40,4 @@
         %td= "Apavu izmērs (EU)"
         %td= @foot_size
 %a.btn.btn-info.edit_worker{ role: "button" }= "Rediģēt"
-%a.btn.btn-info.delete_worker{ href: "#", role: "button" }= "Dzēst"
 %a.btn.btn-info.back{ href: "#workers", role: "button" }= "Atpakaļ"
