@@ -19,16 +19,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-h1 {
+h1, h2, h3{
   margin-top: 0px;
+  padding-top: 10px;
+  color: #fff;
 }
 
+.table_container {
+  overflow: auto;
+  height: 250px;
+}
+
+.btn-primary {
+  background-color: #de3163;
+  border-color: #de3163;
+}
+
+a:visited{
+  color: #fff;
+}
 
 body {
   font-family: helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  background-color: #D3D3D3;
+  background-image: asset-url("background.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 div.nav-bar {
   font-size: 20px;
@@ -65,4 +84,8 @@ span.view-title {
   margin-left: 8px;
   top:7px;
   font-size: 14px;
+}
+
+.fa-home{
+  color: #fff;
 }

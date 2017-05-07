@@ -10,8 +10,7 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li.active
-          %a{:href => "#"}
-            Pēc darbinieka
+          %a{:href => "#"} Pēc darbinieka
         %li
           %a{:href => "#"} Pēc perioda
         %li

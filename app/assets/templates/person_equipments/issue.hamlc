@@ -1,29 +1,29 @@
 %h2= "Izsniegt IAL"
 .content_container
   %form.form-horizontal
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "Struktūrvienība"
       %select.form-control.org_unit{ style: "width:60%;", name: "positiion" }
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "Darbinieks"
       %select.form-control.workers{ style: "width:60%;" }
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "IAL kategorija"
       %select.col-xs-20.equipment_category{ placeholder: "IAL", class: "form-control", style: "width: 60%;" }
         %option= "Visi"
         - for category in Inventory.config.equipmentCategories
           %option{ valiue: category, text: "#{category}" }= category
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "IAL"
       %input.col-xs-20..equipment{ placeholder: "IAL", class: "form-control", style: "width: 60%;" }
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "Izmērs"
       %select.col-xs-20.size{ placeholder: "Izmērs", class: "form-control", style: "width: 60%;" }
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "Izsniegšanas datums"
       %input.col-xs-20.date{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
 
-    %div.form-group
+    %div.form-group.required
       %label.control-label.col-xs-2= "Izsniedzējs"
       %select.form-control.users{ style: "width:60%;" }
         - for user in @users

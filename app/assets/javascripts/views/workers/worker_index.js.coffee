@@ -1,7 +1,6 @@
 class Inventory.Views.WorkersIndex extends Backbone.View
   template: JST['workers/index']
   otherTemplate: JST['workers/prev_index']
-  className: 'content_container'
 
   events:
     'keyup .search'          : 'search'
@@ -33,12 +32,16 @@ class Inventory.Views.WorkersIndex extends Backbone.View
     @collection.trigger('search')
 
   exWorkers: ->
+    @delegateEvents(@events)
     $('.current_workers').hide()
-    @$el.append(@otherTemplate())
-    exWorkers = @collection.where(active: false)
-    exWorkers.forEach (worker) ->
-      exWorkerView = new Inventory.Views.ExWorkerShow(model: worker)
-      $('.ex_workers_container').append(exWorkerView.render().el)
+    unless $('.ex_container').length > 0
+      @$el.append(@otherTemplate())
+      exWorkers = @collection.where(active: false)
+      exWorkers.forEach (worker) ->
+        exWorkerView = new Inventory.Views.ExWorkerShow(model: worker)
+        $('.ex_workers_container').append(exWorkerView.render().el)
+    else
+      $('.ex_container').show()
 
   showWorkers: ->
     $('.ex_container').hide()

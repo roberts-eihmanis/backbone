@@ -1,6 +1,5 @@
-%h1= "Arhīvs"
+%h2= "Pasūtījumu vēture"
 .content_container
-  %h2= "Pasūtījumu vēture"
   %form.form-inline
     .form-group
       %label= "Datums no:"
@@ -15,17 +14,17 @@
         %tr
           %th= "Pasūtījuma Nr."
           %th= "Datums"
-          %th= "Pasūtijuma statuss"
+          %th= "Pasūtījuma statuss"
           %th= "Saite"
       %tbody.orders
 
 %h2= "IAL Kuri nav noliktavā/Katalogs"
 .content_container
-  %div.col-lg-4
-  %div.input-group{ style: 'padding-top:25px;'}
-    %span.input-group-btn
-      %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
-    %input.form-control{ type: 'text', placeholder: 'Meklēt'}
+  %div.col-lg-4.pull-right
+    %div.input-group
+      %span.input-group-btn
+        %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
+      %input.form-control.search{ type: 'text', placeholder: 'Meklēt'}
   %table.table.table-hover.table-striped{ style: "margin-top:10px;"}
     %thead
       %tr
