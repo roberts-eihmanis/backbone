@@ -18,6 +18,7 @@
     %div.form-group.manafacturer_country
       %label.control-label.col-xs-2= "Ražotāja valsts"
       %select.form-control.countries{ style: "width:60%;" }
+        %option{}= ""
         - for country in Inventory.config.manafacturerCountries
           %option{ value: "#{country}" }= country
     %div.form-group

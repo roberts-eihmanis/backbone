@@ -5,11 +5,7 @@
 %td
   = @manafacturer
 %td
-  = @manafacturer_country
-%td
   = @size
-%td
-  = @code
 %td
   = @price
 %td

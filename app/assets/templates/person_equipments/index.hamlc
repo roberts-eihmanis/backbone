@@ -3,32 +3,35 @@
 %a.btn.btn-primary.btn-md{ href: "#person_equipments/order" }= "Jauns pasūtījums"
 %h1= "Individuālo aizsardzības līdzekļu izsniegšanas reģistrācijas žurnāls"
 .content_container
-  %table.table.table-hover.table-striped
-    %thead.table_head
-      %tr
-        %th= "Nr.p.k"
-        %th= "Izsniegšanas datums"
-        %th= "Vārds, uzvārds"
-        %th= "Amats"
-        %th= "Struktūrvienība"
-        %th= "IAL nosaukums"
-        %th= "IAL lietošanas termiņš"
-        %th= "Izsniedzēja vārds, uzvārds, amats"
-    %tbody.journal
+  %div.table_container{ style: "max-height: 300px;" }
+    %table.table.table-hover.table-striped
+      %thead.table_head
+        %tr
+          %th= "Nr.p.k"
+          %th= "Izsniegšanas datums"
+          %th= "Vārds, uzvārds"
+          %th= "Amats"
+          %th= "Struktūrvienība"
+          %th= "IAL nosaukums"
+          %th= "IAL lietošanas termiņš"
+          %th= "Izsniedzēja vārds, uzvārds, amats"
+      %tbody.journal
 %h1= "IAL noliktavā"
 .content_container
-  %div.col-lg-4.pull-right
-    %div.input-group
-      %span.input-group-btn
-        %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
-      %input.form-control.search{ type: 'text', placeholder: 'Meklēt'}
-  %table.table.table-hover.table-striped
-    %thead.table_head
-      %tr
-        %th= "IAL nosaukums"
-        %th= "Kategorija"
-        %th= "Ražotājs"
-        %th= "Izmērs"
-        %th= "Cena"
-        %th= "Skaits"
-    %tbody.products
+  %div.row
+    %div.col-lg-4.pull-right
+      %div.input-group
+        %span.input-group-btn
+          %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
+        %input.form-control.search{ type: 'text', placeholder: 'Meklēt'}
+  %div.table_container{ style: "max-height: 300px;" }
+    %table.table.table-hover.table-striped
+      %thead.table_head
+        %tr
+          %th= "IAL nosaukums"
+          %th= "Kategorija"
+          %th= "Ražotājs"
+          %th= "Izmērs"
+          %th= "Cena"
+          %th= "Skaits"
+      %tbody.products

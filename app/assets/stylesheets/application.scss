@@ -25,14 +25,29 @@ h1, h2, h3{
   color: #fff;
 }
 
+.details_row{
+  padding-left: 10px;
+}
+
 .table_container {
   overflow: auto;
-  height: 250px;
+  max-height: 250px;
 }
 
 .btn-primary {
   background-color: #de3163;
   border-color: #de3163;
+}
+
+.popup_container{
+  background:rgba(0,0,0,0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  padding-left: 33%;
+  padding-right: 33%;
+  padding-top: 5%;
 }
 
 a:visited{

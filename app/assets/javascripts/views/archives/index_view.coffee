@@ -1,6 +1,12 @@
 class Inventory.Views.ArchiveIndexView extends Backbone.View
   template: JST['archives/index']
 
+  events:
+    'keyup .search' : 'search'
+
+  initialize: ->
+    @listenTo @collection[0], 'search', @renderPersonEquipments
+
   templateAttributes: ->
 
   render: ->
@@ -20,3 +26,8 @@ class Inventory.Views.ArchiveIndexView extends Backbone.View
       ordersView = new Inventory.Views.ArchiveOrdersView(model: model)
       @$('.orders').append(ordersView.render().el)
 
+  search: ->
+    $('.person_equipments').empty()
+    input = $('.search').val()
+    @collection[0].search(input)
+    @collection[0].trigger('search')

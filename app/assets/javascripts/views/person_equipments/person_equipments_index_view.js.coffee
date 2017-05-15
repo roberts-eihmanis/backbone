@@ -1,6 +1,12 @@
 class Inventory.Views.PersonEquipmentIndex extends Backbone.View
   template: JST['person_equipments/index']
 
+  events:
+    'keyup .search' : 'search'
+
+  initialize: ->
+    @listenTo @collection[0], 'search', @renderProducts
+
   templateAttributes: ->
     @collection[0].toJSON()
 
@@ -23,3 +29,9 @@ class Inventory.Views.PersonEquipmentIndex extends Backbone.View
       productView = new Inventory.Views.ProductsView(model: product)
       @$('.products').append(productView.render().el)
     @
+
+  search: ->
+    $('.products').empty()
+    input = $('.search').val()
+    @collection[0].search(input)
+    @collection[0].trigger('search')

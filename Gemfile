@@ -21,13 +21,21 @@ gem 'jbuilder', '~> 2.5'
 # PDF generator prawn
 gem 'prawn'
 gem 'prawn-table'
+gem 'responders'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# backbone JS
 gem 'backbone-on-rails'
+gem 'backbone-relational-rails', '~> 0.9.0'
+gem 'underscore-rails'
+
+# JQuery for rails
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'underscore-rails'
+
+# rails stuff
 gem 'haml'
 gem 'simple_form'
 gem 'momentjs-rails'

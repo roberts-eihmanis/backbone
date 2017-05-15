@@ -17,12 +17,6 @@ class PersonEquipmentsController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @person_equipment }
-      format.pdf do
-        pdf = OrderPdf.new(@person_equipment, view_context)
-        send_data pdf.render, filename: "order_#{@order.order_number}.pdf",
-          type: "application/pdf",
-          disposition: "inline"
-      end
     end
   end
 

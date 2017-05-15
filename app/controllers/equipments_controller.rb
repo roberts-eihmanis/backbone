@@ -1,7 +1,7 @@
 class EquipmentsController < ApplicationController
 # GET /equipments
   def index
-    @equipments = PersonEquipment.
+    @equipments = PersonEquipment.search(params[:search]).
       select(:title, :size, :manafacturer, :category, :manafacturer_country, :price, :code, 'SUM(count) AS count').
       where(worker_id: nil).
       group('title', 'size', 'manafacturer', 'category', 'manafacturer_country', 'price', 'code', 'count')
@@ -12,7 +12,7 @@ class EquipmentsController < ApplicationController
   end
 
   def catalogue
-    @catalogue_equipments = PersonEquipment.
+    @catalogue_equipments = PersonEquipment.search(params[:search]).
       select(:title, :size, :category, :manafacturer, :price).
       where.not(worker_id: nil).
       group('title', 'size', 'category', 'manafacturer', 'price')

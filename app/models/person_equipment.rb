@@ -8,4 +8,11 @@ class PersonEquipment < ApplicationRecord
   validates_presence_of :title, :price, :count, :category, :purchased_at
   validates :price, :numericality => { :greater_than_or_equal_to => 0 }
 
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
 end

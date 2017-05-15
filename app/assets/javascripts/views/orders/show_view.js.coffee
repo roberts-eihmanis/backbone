@@ -1,6 +1,10 @@
 class Inventory.Views.OrdersShowView extends Backbone.View
   template: JST['orders/show']
   tagName: 'tr'
+  className: 'details_row'
+
+  events:
+    'click td' : 'openWorkers'
 
   templateAttributes: ->
     @model.toJSON()
@@ -8,3 +12,6 @@ class Inventory.Views.OrdersShowView extends Backbone.View
   render: ->
     @$el.html(@template(@templateAttributes()))
     @
+
+  openWorkers: ->
+    detailsView = new Inventory.Views.OrderDetailsView()

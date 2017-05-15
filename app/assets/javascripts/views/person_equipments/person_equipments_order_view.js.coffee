@@ -96,6 +96,7 @@ class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
       status: "ordered"
     @model.save(newOrder,
       success: (model) =>
+        @export(e)
         @updateEquipments(model)
       error: ->
         alert "Nekas nenotika"
@@ -107,4 +108,9 @@ class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
     @unorderedEquipments.forEach (equipment) ->
       equipment.save(order_id: model.id)
     Backbone.history.navigate('#home', trigger: true)
+
+  export: (e) ->
+    e.preventDefault()
+    url = "/orders/#{@model.id}.pdf"
+    window.open(url, '_blank');
 

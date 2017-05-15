@@ -8,7 +8,7 @@
       %label= "Datums līdz:"
       %input.datepicker{ type: "text", name: "date", placeholder: "DD.MM.YYYY", class: "form-control" }
     %button.btn.btn-primary.save= "Atlasīt"
-  %div.table_container{ style: "height: 250px; overflow: auto;"}
+  %div.table_container
     %table.table.table-hover.table-striped{ style: "margin-top:10px;"}
       %thead
         %tr
@@ -18,19 +18,21 @@
           %th= "Saite"
       %tbody.orders
 
-%h2= "IAL Kuri nav noliktavā/Katalogs"
+%h2= "Katalogs"
 .content_container
-  %div.col-lg-4.pull-right
-    %div.input-group
-      %span.input-group-btn
-        %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
-      %input.form-control.search{ type: 'text', placeholder: 'Meklēt'}
-  %table.table.table-hover.table-striped{ style: "margin-top:10px;"}
-    %thead
-      %tr
-        %th= "IAL Nosaukums"
-        %th= "Kategorija"
-        %th= "Ražotājs"
-        %th= "Izmērs"
-        %th= "Cena"
-    %tbody.person_equipments
+  %div.row
+    %div.col-lg-4.pull-right
+      %div.input-group
+        %span.input-group-btn
+          %button.btn.btn-secondary{ type: 'button' }= "Meklēt"
+        %input.form-control.search{ type: 'text', placeholder: 'Meklēt'}
+  %div.table_container
+    %table.table.table-hover.table-striped{ style: "margin-top:10px;"}
+      %thead
+        %tr
+          %th= "IAL Nosaukums"
+          %th= "Kategorija"
+          %th= "Ražotājs"
+          %th= "Izmērs"
+          %th= "Cena"
+      %tbody.person_equipments
