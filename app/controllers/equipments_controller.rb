@@ -14,7 +14,6 @@ class EquipmentsController < ApplicationController
   def catalogue
     @catalogue_equipments = PersonEquipment.search(params[:search]).
       select(:title, :size, :category, :manafacturer, :price).
-      where.not(worker_id: nil).
       group('title', 'size', 'category', 'manafacturer', 'price')
     respond_to do |format|
       format.html
