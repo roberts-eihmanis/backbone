@@ -30,15 +30,19 @@ class OrderPdf < Prawn::Document
       row(0).border_width = 1
       row(0).text_color = "000000"
       columns(0..7).borders = [:right, :bottom]
+      columns(0..8).width = 60
       row(0).columns(0..7).borders = [:bottom, :right]
     end
   end
 
   def line_item_rows
     length = @order.equipment_orders.count
-    data = @order.equipment_orders.map do |item|
-      [
-        item.worker.first_name, 
+    i = 1
+    data = []
+    @order.equipment_orders.each do |item|
+      data << [
+        i,
+        item.worker.try(:first_name), 
         item.worker.last_name, 
         item.worker.height, 
         item.worker.breast_size,
@@ -47,9 +51,7 @@ class OrderPdf < Prawn::Document
         item.person_equipment.title, 
         item.count
       ]
-    end
-    for i in 1..length do
-      data[0].insert(0, i)
+      i += 1
     end
     
     [["Nr.p.k", "Vards", "Uzvards", "Augums", "Krutis", "Gurni", "Viduklis", "Nosaukums", "Skaits"]] + data
