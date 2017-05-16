@@ -22,13 +22,14 @@ class OrderPdf < Prawn::Document
 
   def line_items
     move_down 20
-    table line_item_rows, :cell_style => { :size => 10, :text_color => "737373" } do
+    table line_item_rows, :cell_style => { :size => 9, :text_color => "737373" } do
       cells.padding = 12
       cells.borders = []
+      rows(1..50).borders = [:bottom]
       row(0).borders = [:bottom]
       row(0).border_width = 1
       row(0).text_color = "000000"
-      columns(0..7).borders = [:right]
+      columns(0..7).borders = [:right, :bottom]
       row(0).columns(0..7).borders = [:bottom, :right]
     end
   end
