@@ -4,8 +4,8 @@ class Inventory.Views.ExWorkerShow extends Backbone.View
   className: 'row_worker'
 
   events:
-    'click td'       : 'open'
     'click .recover' : 'recover'
+    'click .save'    : 'save'
 
   templateAttributes: ->
     @model.toJSON()
@@ -17,10 +17,6 @@ class Inventory.Views.ExWorkerShow extends Backbone.View
   open: ->
     Backbone.history.navigate("#workers/show/#{@model.id}", trigger: true)
 
-  recover: ->
-    @model.save({active: true, end_at: null},
-      success: ->
-        Backbone.history.navigate("#workers", trigger: true)
-      error: ->
-        alert "Nevarēja atjaunot"
-      )
+  recover: (e) ->
+    dateView = new Inventory.Views.WorkerDateView(model: @model)
+    $('body').prepend dateView.render().el

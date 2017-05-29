@@ -1,4 +1,5 @@
 class Inventory.Views.PersonEquipmentsOrder extends Backbone.View
+  # Skats, kurā mēs strādāsim ar datiem
   template: JST['person_equipments/order']
 
   events:

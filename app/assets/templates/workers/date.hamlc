@@ -1,0 +1,7 @@
+.content_container
+  %form.form-horizontal
+    %h2{ style: "color: black"}= "Ievadiet kad darbinieks tika atjaunots"
+    %div.form-group.required
+      %label.control-label.col-xs-2= "Strāda no"
+      %input.form-control.start_at{ type: "text", name: "start_at", placeholder: "DD.MM.YYYY", class: "form-control", style: "width: 60%;" }
+  %button.btn.btn-primary.save= "Saglabāt"

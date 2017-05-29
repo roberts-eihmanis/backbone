@@ -8,4 +8,4 @@
   - else
     = "Piegādāts"
 %td
-  = ""
+  %a{ href: "/orders/#{@id}.pdf"}= "Saite"

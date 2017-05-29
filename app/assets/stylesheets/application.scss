@@ -54,6 +54,19 @@ a:visited{
   color: #fff;
 }
 
+td{
+  a:visited{
+    color: blue;
+}
+}
+a a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
 body {
   font-family: helvetica, sans-serif;
   font-size: 13px;

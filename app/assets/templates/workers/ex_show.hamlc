@@ -6,4 +6,5 @@
 %td= moment(@start_at).format('DD.MM.YYYY') if @start_at
 %td= moment(@end_at).format('DD.MM.YYYY') if @end_at
 %td
-  %button.btn.btn-primary.recover= "Atjaunot Darbā"
+  %div
+    %button.btn.btn-primary.recover{ style: "z-index: 999;"}= "Atjaunot Darbā"
