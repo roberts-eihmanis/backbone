@@ -1,3 +1,26 @@
-%td= @title
-%td= @price
-%td= @count
+.reports_container{ style: "margin-top:25px;"}
+  %h1= "Pēc Darbinieka"
+  .content_container
+    %form.form-inline
+      .form-group
+        %label= "Datums no:"
+        %input.datepicker{ type: "text", name: "date_gte", placeholder: "DD.MM.YYYY", class: "form-control" }
+      .form-group
+        %label= "Datums līdz:"
+        %input.datepicker{ type: "text", name: "date_lte", placeholder: "DD.MM.YYYY", class: "form-control" }
+    %div.form-group
+      %label.control-label.col-xs-2{ style: 'padding-left:0px;'}= "Struktūrvienība"
+      %select.form-control.org_unit{ style: "width:30%;", name: "positiion" }
+    %div.form-group
+      %label.control-label.col-xs-2{ style: 'padding-left:0px;'}= "Darbinieks"
+      %select.form-control.workers{ style: "width:30%;" }
+    %button.btn.btn-primary.search= "Atlasīt"
+    %table.table.table-hover.table-striped
+      %thead.table_head
+        %tr
+          %th= "Vārds"
+          %th= "Uzvārds"
+          %th= "IAL Nosaukums"
+          %th= "Cena"
+          %th= "Skaits"
+      %tbody.by_period

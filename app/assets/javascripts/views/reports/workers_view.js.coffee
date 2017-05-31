@@ -1,5 +1,5 @@
 class Inventory.Views.ReportsWorkersView extends Backbone.View
-  template: JST['reports/period_show']
+  template: JST['reports/worker_show']
   tagName: 'tr'
 
   templateAttributes: ->

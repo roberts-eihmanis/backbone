@@ -24,10 +24,15 @@ class ReportsController < ApplicationController
   end
 
   def by_worker
-    @equipments_by_worker = PersonEquipment.joins('LEFT JOIN workers ON person_equipments.worker_id = workers.id')
-      .select('person_equipments.title', 'workers.first_name', 'workers.last_name', 'SUM(person_equipments.price) as price', 'SUM(person_equipments.count) as count')
+    @equipments_by_worker = PersonEquipment
+      .joins('LEFT JOIN workers ON person_equipments.worker_id = workers.id')
+      .select('workers.id', 'person_equipments.title', 'workers.first_name', 'workers.last_name', 'SUM(person_equipments.price) as price', 'SUM(person_equipments.count) as count')
       .where.not(worker_id: nil)
-      .group('workers.first_name', 'workers.last_name', 'person_equipments.title')
+      .group('workers.id', 'workers.first_name', 'workers.last_name', 'person_equipments.title')
+
+    if params[:worker]
+      @equipments_by_worker = @equipments_by_worker.where(worker_id: params[:worker])
+    end
     respond_to do |format|
       format.html
       format.json { render json: @equipments_by_worker }
