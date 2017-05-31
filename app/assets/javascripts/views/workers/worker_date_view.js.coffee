@@ -16,7 +16,6 @@ class Inventory.Views.WorkerDateView extends Backbone.View
       success: =>
         @remove()
         Backbone.history.navigate("#workers", trigger: true)
-        Backbone.history.loadUrl()
       error: ->
         alert "Nevarēja atjaunot"
       )

@@ -30,7 +30,7 @@ h1, h2, h3{
 }
 
 .table_container {
-  overflow: auto;
+  overflow-y: scroll;
   max-height: 250px;
 }
 

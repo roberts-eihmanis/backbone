@@ -5,7 +5,10 @@ class Inventory.Views.ExWorkerShow extends Backbone.View
 
   events:
     'click .recover' : 'recover'
-    'click .save'    : 'save'
+    'click .save'    : 'save' 
+
+  initialize: ->
+    @listenTo @model, 'change', @render
 
   templateAttributes: ->
     @model.toJSON()

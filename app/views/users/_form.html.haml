@@ -8,12 +8,15 @@
       = f.text_field :last_name, placeholder: 'Uzvārds', class: 'form-control', style: "width: 60%;"
     %div.form-group
       %label.control-label.col-xs-2= "Parole"
-      = f.password_field :password, placeholder: 'Parole', class: 'form-control', style: "width: 60%;"
+      = f.password_field :encrypted_password, placeholder: 'Parole', class: 'form-control', style: "width: 60%;"
     %div.form-group
       %label.control-label.col-xs-2= "Epasts"
       = f.text_field :email, placeholder: 'Epasts', class: 'form-control', style: "width: 60%;"
     %div.form-group
       %label.control-label.col-xs-2= "Telefona Nummurs"
       = f.text_field :phone_number, placeholder: 'Telefona Numurs', class: 'form-control', style: "width: 60%;"
-    = f.submit class: 'btn btn-primary'
+    %div.form-group
+      %label.control-label.col-xs-2= "Loma"
+      = f.select :role, options_for_select(@roles), class: 'form-control'
+    = f.submit "Apstiprināt", class: 'btn btn-primary'
     %a.btn.btn-primary{ href: '/admin/users'}= "Atpakaļ"

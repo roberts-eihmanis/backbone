@@ -17,6 +17,14 @@ Rails.application.routes.draw do
   end
   resources :equipment_orders
   resources :orders
+
+  resources :reports, only: [:by_period, :by_sum, :by_worker] do
+    collection do
+      get 'by_period'
+      get 'by_sum'
+      get 'by_worker'
+    end
+  end
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

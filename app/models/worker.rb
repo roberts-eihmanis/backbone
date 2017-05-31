@@ -6,7 +6,7 @@ class Worker < ApplicationRecord
 
   def self.search(search)
     if search
-      where('first_name LIKE ?', "%#{search}%")
+      where("CONCAT_WS(' ', first_name, last_name) LIKE :q", :q => "%#{search}%")
     else
       all
     end

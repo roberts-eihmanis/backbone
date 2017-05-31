@@ -9,6 +9,7 @@ class Inventory.Views.WorkersIndex extends Backbone.View
 
   initialize: ->
     @listenTo @collection, 'search', @renderWorkers
+    @listenTo @collection, 'change', @render
 
   templateAttributes: ->
     @collection.toJSON()

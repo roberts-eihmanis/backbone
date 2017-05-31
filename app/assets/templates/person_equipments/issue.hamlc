@@ -16,7 +16,7 @@
     %div.form-group.required
       %label.control-label.col-xs-2= "IAL"
       %input.col-xs-20..equipment{ placeholder: "IAL", class: "form-control", style: "width: 60%;" }
-    %div.form-group.required
+    %div.form-group
       %label.control-label.col-xs-2= "Izmērs"
       %select.col-xs-20.size{ placeholder: "Izmērs", class: "form-control", style: "width: 60%;" }
     %div.form-group.required

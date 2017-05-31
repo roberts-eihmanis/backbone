@@ -63,7 +63,7 @@ class Inventory.Views.PersonEquipmentIssue extends Backbone.View
     element = @$('select.workers')
     orgUnit = @$('select.org_unit').val()
     unless orgUnit == -1
-      unitWorkers = workers.where(unit: orgUnit)
+      unitWorkers = workers.where(unit: orgUnit, active: true)
     for unitWorker in unitWorkers
       worker = unitWorker.toJSON()
       option = $("<option>", value: worker.id, text: "#{worker.first_name} #{worker.last_name}")

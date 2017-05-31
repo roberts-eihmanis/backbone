@@ -15,4 +15,14 @@ class PersonEquipment < ApplicationRecord
       all
     end
   end
+
+  def self.report_search(date_lte, date_gte)
+    scope = all
+    if date_gte
+      scope.where("purchased_at >= ?", date_gte.to_date).
+        where("purchased_at <= ?", date_lte.to_date)
+    else
+      all
+    end
+  end
 end

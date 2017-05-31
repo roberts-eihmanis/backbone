@@ -1,0 +1,18 @@
+.reports_container{ style: "margin-top:25px;"}
+  %h1= "Pēc Perioda"
+  .content_container
+    %form.form-inline
+      .form-group
+        %label= "Datums no:"
+        %input.datepicker{ type: "text", name: "date_gte", placeholder: "DD.MM.YYYY", class: "form-control" }
+      .form-group
+        %label= "Datums līdz:"
+        %input.datepicker{ type: "text", name: "date_lte", placeholder: "DD.MM.YYYY", class: "form-control" }
+      %button.btn.btn-primary.search= "Atlasīt"
+    %table.table.table-hover.table-striped
+      %thead.table_head
+        %tr
+          %th= "IAL Nosaukums"
+          %th= "Skaits"
+      %tbody.by_period
+

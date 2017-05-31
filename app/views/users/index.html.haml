@@ -17,6 +17,9 @@
           %td= user.first_name
           %td= user.last_name
           %td= user.email
-          %td= user.role
+          - if user.role == "admin"
+            %td= "Administrators"
+          - elsif user.role == "user"
+            %td= "Lietotājs"
           %td= user.phone_number
 

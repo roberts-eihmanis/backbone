@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @roles = ['admin', 'user', 'worker']
     @user = User.find(params[:id])
   end
 
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.new(secure_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'Task was successfully created.' }
+        format.html { redirect_to users_path, notice: 'Lietotājs veiksmīgi izveidots.' }
         format.json { redirect_to @user }
       else
         format.html { render :new }
@@ -44,9 +45,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(secure_params)
-      redirect_to @user, :notice => "User updated."
+      redirect_to users_path, :notice => "Lietotājs atjaunots"
     else
-      redirect_to @user, :alert => "Unable to update user."
+      redirect_to @user, :alert => "Nespēja atjaunot lietotāju"
     end
   end
 
